@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="javascript" href="assets/js/script.js">
+    <!-- <link rel="javascript" href="assets/js/script.js"> -->
+    
     <meta name="description" content="Only Fools and Horses quiz">
     <meta name="keywords" content="Only fools and horses, quiz, online quiz">
     <title>Only fools and Horses quiz!</title>
 </head>
 <body>
-    <h1 id = "logo"></i>Only Fools and Horses quiz<i class="fa-solid fa-bolt-lightning"></i></h1>
+    <a href="index.html">
+        <h1 id = "logo"></i>Only Fools and Horses quiz<i class="fa-solid fa-bolt-lightning"></i></h1>
+    </a>
     </div>
     <div id="outer-image">
-    <div id="image"></div>    
+    <div id="game-area-background">
+        <div id = "game-area"></div>
+    </div>    
     </div>
-    <div id = "game-area">
+    <div id = "game-controls">
         <div>
             <p id="intro-paragraph">
                 Welcome to the only fools and horses quiz! <br> Here you can test your knowledge of the legendary Only Fools and Horses show and see how much you know about the 
@@ -24,14 +29,15 @@
             </p>
         </div>
         <div id="button-outer">
-            <button class="btn-hover" id="play-now">Play now!</button>
+            <button id="play-now" data-type = "play-now" onclick="mySimpleFunction();">Play now!</button>
             <div id="button-inner">
-                <button id="instructions">Instructions</button>
-                <button id="high-scores">High scores</button>
+                <button id="instructions" data-type = "instructions">Instructions</button>
+                <button id="high-scores" data-type = "high-scores">High scores</button>
             </div>
         </div>
     </div>
     <!-- Font awesome script -->
     <script src="https://kit.fontawesome.com/d0daf359ec.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

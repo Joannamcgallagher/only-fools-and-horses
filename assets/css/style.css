@@ -22,6 +22,12 @@ h1 i
     color: goldenrod;
 }
 
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
 #logo
 {
     width: 90%;
@@ -31,7 +37,7 @@ h1 i
 
 }
 /* Style the index.html image so it sits in the center of the page */
-#image
+#game-area-background
 {
     background: url("../images/del-rodney-grandad.jpg") no-repeat center center;
     height: 550px;
@@ -47,7 +53,7 @@ h1 i
     box-shadow: 10px 10px 20px darkgray;
 }
 
-#game-area
+#game-controls
 {
     width: 60%;
     margin-left: auto;
