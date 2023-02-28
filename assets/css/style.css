@@ -36,6 +36,18 @@ a
     margin-right: auto;
 
 }
+
+/* Create show and hidden classes to show and hide elements on index.html */
+.show 
+{
+    visibility: visible;
+}
+
+.hide
+{
+    visibility: hidden;
+    max-height: 0;
+}
 /* Style the index.html image so it sits in the center of the page */
 #game-area-background
 {
@@ -107,4 +119,52 @@ a
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
+/* Create a class to be called to style the question-container when the play-now button is clicked */
+.update-question-div
+{
+    height: 275px;
+    border: 3px solid goldenrod;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px darkgray;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Create styles for the label and input once it's visible */
+.user-label-style
+{
+    font-family: inherit;
+    margin-top: 50px;
+    height: 30px;
+    font-size: 25px;
+}
+
+.user-input
+{
+    margin-top: 50px;
+    border: 2px solid goldenrod;
+    border-radius: 20px;
+    height: 30px;
+    font-size: larger;
+    box-shadow: 10px 10px 20px darkgray;
+    padding: 0px 10px;
+}
+
+/* Button class that can be added to both user details and questions */
+.button-additional
+{
+    width: 40%;
+    height: 35px;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-color: goldenrod;
+    color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px darkgray;
+    margin-top: 40px;
+}
+
+
 

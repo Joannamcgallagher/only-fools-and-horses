@@ -20,8 +20,8 @@ function createUserDetailsPage()
 {
     console.log("Button clicked");
 
-    //clear the paragraph text so the label & input fields can be added
-    document.getElementById("intro-paragraph").textContent = "";
+    //hide the p element
+    document.getElementById("intro-paragraph").classList.add("hide");
 
     //change the main image and make set the height smaller
     document.getElementById("game-area-background").style.background = "url('assets/images/banner.png') no-repeat center center";
@@ -34,48 +34,16 @@ function createUserDetailsPage()
     console.log(buttons);
     for (let i = 0; i < buttons.length; i++)
     {
-        buttons[i].remove();
+        buttons[i].classList.add("hide");
     }
-    console.log(buttons); //instructions button still showing when button clicked
-    let instrButton = document.getElementById("instructions");
-    instrButton.remove();
-    
-    //create a div to hold the label & input elements and add to body
-    let userDetails = document.createElement("div");
-    userDetails.setAttribute("id", "quiz-container");
-    userDetails.style.height = "275px"
-    userDetails.style.width = "60%";
-    userDetails.style.boxShadow = "20px yellow";
-    userDetails.style.border = "4px solid darkgoldenrod";
-    userDetails.style.borderRadius = "20px";
-    userDetails.style.marginLeft = "auto";
-    userDetails.style.marginRight = "auto";
-    document.body.appendChild(userDetails);
-
-    //create a form and add label & input 
-    let userForm = document.createElement("form");
-    userForm.setAttribute("id", "user-input");
-    userForm.style.textAlign = "center";
-    document.getElementById("quiz-container").appendChild(userForm);
-    userForm.style.display = "grid";
-
-    let label = document.createElement("label");
-    label.setAttribute("for", "user-name");
-    label.innerHTML = "Enter your name here : ";
-    label.style.marginTop = "50px";
-    userForm.appendChild(label);
-
-    let input = document.createElement("input");
-    input.setAttribute("name", "user-name");
-    input.setAttribute("id", "user-name");
-    input.setAttribute("type", "text");
-    userForm.appendChild(input);
-
-    //create a button
-    let submitButton = document.createElement("button");
-    submitButton.setAttribute("id", "lets-go");
-    submitButton.textContent = "Let's Go!!";
-    userForm.appendChild(submitButton);    
-    
-    
+    console.log(buttons);
+        
+    // call the update div to re-style the question container
+    document.getElementById("user-label").classList.remove("hide");
+    document.getElementById("user-input").classList.remove("hide");
+    document.getElementById("btn-lets-go").classList.remove("hide");
+    document.getElementById("question=container").classList.add("update-question-div");
+    document.getElementById("user-label").classList.add("user-label-style");
+    document.getElementById("user-input").classList.add("user-input");
+    document.getElementById("btn-lets-go").classList.add("button-additional");
 }
