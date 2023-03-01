@@ -1,3 +1,34 @@
+//create global variables for username, score & questions.
+const userName = "";
+const currentScore = 0;
+const questions = 
+[
+    {
+    question : "What's the name of the local pub where the Trotter family frequent?",
+    answers :
+    {
+        option1 : "The Nag's Head",
+        option2 : "The Queen Vic",
+        option3 : "The Rovers Return",
+        option4 : "Moe's Tavern"
+    },
+    correctAnswer : "option1"
+
+    },
+    {
+        question : "What did Trigger call Rodney?",
+        answers :
+        {
+            option1 : "Rodney",
+            option2 : "Rod",
+            option3 : "Dave",
+            option4 : "Denzel"
+        },
+        correctAnswer : "option3"
+    }
+];
+
+
 document.addEventListener("DOMContentLoaded", function()
 {
     let buttons = document.getElementsByTagName("button");
@@ -11,6 +42,13 @@ document.addEventListener("DOMContentLoaded", function()
                 createUserDetailsPage();
             }
             
+            if(this.getAttribute("data-type") === "lets-go")
+            {
+                //retrieve the username and store it in the global variable
+                userName = getUserName();
+                console.log(userName);
+                hideUserInput();
+            }
         })
     }
 
@@ -47,3 +85,27 @@ function createUserDetailsPage()
     document.getElementById("user-input").classList.add("user-input");
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
+/**
+ * Retrieve the username from the input field and return the value of same
+ */
+function getUserName()
+{
+    let name = document.getElementById("user-input");
+    return(name).value;
+}
+/**
+ * Create function to hide the elements for the username so the questions can be loaded in
+ */
+function hideUserInput()
+{
+    document.getElementById("user-label").classList.remove("show");
+    document.getElementById("user-input").classList.remove("show");
+    document.getElementById("btn-lets-go").classList.remove("show");
+    document.getElementById("user-label").classList.add("hide");
+    document.getElementById("user-input").classList.add("hide");
+    document.getElementById("btn-lets-go").classList.add("hide");
+    console.log("elements hidden");
+}
+
+
+
