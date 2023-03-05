@@ -1,3 +1,5 @@
+let userName = "";
+
 document.addEventListener("DOMContentLoaded", function()
 {
     let buttons = document.getElementsByTagName("button");
@@ -9,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function()
             if(this.getAttribute("data-type") === "play-now")
             {
                 createUserDetailsPage();
+            }
+
+            if(this.getAttribute("data-type") === "lets-go")
+            {
+                userName = submitUserName();
+                createQuestionPage();
             }
             
         })
@@ -46,4 +54,16 @@ function createUserDetailsPage()
     document.getElementById("user-label").classList.add("user-label-style");
     document.getElementById("user-input").classList.add("user-input");
     document.getElementById("btn-lets-go").classList.add("button-additional");
+}
+
+function submitUserName()
+{
+    return document.getElementById("user-input").value;
+}
+
+//create the display for the questions and multiple choice
+
+function createQuestionPage()
+{
+    
 }
