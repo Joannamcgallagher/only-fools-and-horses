@@ -28,6 +28,12 @@ a
     color: black;
 }
 
+h3
+{
+    margin: 5px 0px 15px 0px;
+    font-size: 150%
+}
+
 #logo
 {
     width: 90%;
@@ -46,7 +52,7 @@ a
 .hide
 {
     visibility: hidden;
-    max-height: 0;
+    display: none;
 }
 /* Style the index.html image so it sits in the center of the page */
 #game-area-background
@@ -64,6 +70,7 @@ a
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
 
 #game-controls
 {
@@ -98,13 +105,24 @@ a
     box-shadow: 10px 10px 20px darkgray;
 }
 
+#question-container
+{
+    height: 300px;
+}
+
 /* Invert colors when button is hovered over */
-#play-now:hover, #instructions:hover, #high-scores:hover
+#play-now:hover, #instructions:hover, #high-scores:hover, #btn-lets-go:hover, #option1:hover, #option2:hover, #option3:hover, #option4:hover
 {
     background-color: white;
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
+/* button:hover --- Not working???
+{
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
+} */
 
 #button-inner button
 {
@@ -164,6 +182,21 @@ a
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
     margin-top: 40px;
+}
+
+.button-options
+{
+    display: grid;
+    text-align: center;
+    margin: 5px auto 15px auto;
+    width: 40%;
+    height: 35px;
+    font-size: 25px;
+    background-color: goldenrod;
+    color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px darkgray;
 }
 
 
