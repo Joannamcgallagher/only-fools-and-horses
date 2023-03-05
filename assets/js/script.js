@@ -10,7 +10,7 @@ const questions = [
         correctAnswer : 2
     }
 ]
-
+//Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function()
 {
     let buttons = document.getElementsByTagName("button");
@@ -111,6 +111,7 @@ function nextQuestion()
 {
     //call a question from the questions array, increment the questions counter so the same question is not loaded twice
     console.log(questions[questionCounter]);
+    questionCounter++;
     return questions[questionCounter];
 }
 
