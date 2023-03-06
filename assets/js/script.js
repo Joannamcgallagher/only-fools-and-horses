@@ -1,5 +1,6 @@
 let userName = "";
 let questionCounter = 0;
+let nextQ = [];
 const questions = [
     {
         question : "What is the name of the local pub frequented by the Trotters? ",
@@ -51,12 +52,11 @@ function createUserDetailsPage()
     // button.remove();
 
     let buttons = document.getElementsByTagName("button");
-    console.log(buttons);
+
     for (let i = 0; i < buttons.length; i++)
     {
         buttons[i].classList.add("hide");
     }
-    console.log(buttons);
         
     // call the update div to re-style the question container
     document.getElementById("user-label").classList.remove("hide");
@@ -92,36 +92,34 @@ function createQuestionPage()
     document.getElementById("option2").classList.remove("hide");
     document.getElementById("option3").classList.remove("hide");
     document.getElementById("option4").classList.remove("hide");
-    document.getElementById("question-header").classList.add("show");
-    document.getElementById("option1").classList.add("show");
-    document.getElementById("option2").classList.add("show");
-    document.getElementById("option3").classList.add("show");
-    document.getElementById("option4").classList.add("show");
+
 }
 
 //once the question elements are available, display the questions
 function startQuiz()
 {
-    let nextQ = nextQuestion();
-    displayQuestion(nextQ);
+  
+    displayQuestion();
 }
 
 //call the next question
 function nextQuestion()
 {
     //call a question from the questions array, increment the questions counter so the same question is not loaded twice
-    console.log(questions[questionCounter]);
-    questionCounter++;
-    return questions[questionCounter];
+    // console.log(questions[questionCounter]);
+    // questionCounter++;
+    // return questions[questionCounter];
 }
 
 //get the parameters from the question and display them
-function displayQuestion(loadedQuestion)
+function displayQuestion()
 {
-    document.getElementById("question-header").textContent = loadedQuestion.question;
-    document.getElementById("option1").textContent = loadedQuestion.option1;
-    document.getElementById("option2").textContent = loadedQuestion.option2;
-    document.getElementById("option3").textContent = loadedQuestion.option3;
-    document.getElementById("option4").textContent = loadedQuestion.option4;
+    document.getElementById("question-header").textContent = questions[questionCounter].question;
+    document.getElementById("option1").textContent = questions[questionCounter].option1;
+    document.getElementById("option2").textContent = questions[questionCounter].option2;
+    document.getElementById("option3").textContent = questions[questionCounter].option3;
+    document.getElementById("option4").textContent = questions[questionCounter].option4;
+    questionCounter++;
+    console.log(questionCounter);
 
 }
