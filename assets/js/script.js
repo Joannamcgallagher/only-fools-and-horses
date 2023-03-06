@@ -98,23 +98,14 @@ function createQuestionPage()
 //once the question elements are available, display the questions
 function startQuiz()
 {
-  
     displayQuestion();
-}
-
-//call the next question
-function nextQuestion()
-{
-    //call a question from the questions array, increment the questions counter so the same question is not loaded twice
-    // console.log(questions[questionCounter]);
-    // questionCounter++;
-    // return questions[questionCounter];
+    //add event listeners to the P elements
 }
 
 //get the parameters from the question and display them
 function displayQuestion()
 {
-    document.getElementById("question-header").textContent = questions[questionCounter].question;
+    document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
     document.getElementById("option2").textContent = questions[questionCounter].option2;
     document.getElementById("option3").textContent = questions[questionCounter].option3;

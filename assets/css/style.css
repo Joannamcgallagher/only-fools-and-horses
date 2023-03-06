@@ -30,7 +30,7 @@ a
 
 h3
 {
-    margin: 5px 0px 15px 0px;
+    margin: 5px 0px 25px 0px;
     font-size: 150%
 }
 
@@ -111,7 +111,7 @@ h3
 }
 
 /* Invert colors when button is hovered over */
-#play-now:hover, #instructions:hover, #high-scores:hover, #btn-lets-go:hover, #option1:hover, #option2:hover, #option3:hover, #option4:hover
+#play-now:hover, #instructions:hover, #high-scores:hover
 {
     background-color: white;
     color: goldenrod;
@@ -184,7 +184,7 @@ h3
     margin-top: 40px;
 }
 
-.button-options
+/* .button-options
 {
     display: grid;
     text-align: center;
@@ -197,6 +197,26 @@ h3
     border: 3px solid black;
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
+} */
+
+.options
+{
+    display: grid;
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    margin: 10px auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: goldenrod;
+    color: white;
+}
+
+.options:hover
+{
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
 }
 
 
