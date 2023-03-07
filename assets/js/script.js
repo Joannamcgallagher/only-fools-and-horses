@@ -1,6 +1,7 @@
 let userName = "";
 let questionCounter = 0;
 let nextQ = [];
+let sumbittedAnswer;
 const questions = [
     {
         question : "What is the name of the local pub frequented by the Trotters? ",
@@ -99,12 +100,13 @@ function createQuestionPage()
 function startQuiz()
 {
     displayQuestion();
-    //add event listeners to the P elements
+    checkAnswer();
 }
 
 //get the parameters from the question and display them
 function displayQuestion()
 {
+    document.getElementById("question-container").style.height = "300px"
     document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
     document.getElementById("option2").textContent = questions[questionCounter].option2;
@@ -113,4 +115,31 @@ function displayQuestion()
     questionCounter++;
     console.log(questionCounter);
 
+    //add event listeners to the p options
+    let pOptions = document.getElementsByTagName("p");
+    let pOptionsArray = Array.from(pOptions);
+    //remove the first p elemnt from the array - the intro paragraph
+    pOptionsArray.shift();
+    for(let pOption of pOptionsArray)
+    {
+        pOption.addEventListener("click", myFunction);
+    }
+
+    
+
+}
+
+function checkAnswer(option)
+{
+    sumbittedAnswer = option;
+    console.log(sumbittedAnswer);
+}
+
+function myFunction(event)
+{
+    let answerDataType = this.getAttribute("data-type");
+    let answerId = this.getAttribute("id");
+    console.log(answerId);
+    document.getElementById(answerId).classList.remove("options");
+    document.getElementById(answerId).classList.add("on-click");
 }

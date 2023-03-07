@@ -107,7 +107,7 @@ h3
 
 #question-container
 {
-    height: 300px;
+    height: 200px;
 }
 
 /* Invert colors when button is hovered over */
@@ -184,21 +184,6 @@ h3
     margin-top: 40px;
 }
 
-/* .button-options
-{
-    display: grid;
-    text-align: center;
-    margin: 5px auto 15px auto;
-    width: 40%;
-    height: 35px;
-    font-size: 25px;
-    background-color: goldenrod;
-    color: white;
-    border: 3px solid black;
-    border-radius: 20px;
-    box-shadow: 10px 10px 20px darkgray;
-} */
-
 .options
 {
     display: grid;
@@ -206,6 +191,7 @@ h3
     width: 40%;
     font-size: 150%;
     margin: 10px auto;
+    padding: 2px;
     border: 3px solid black;
     border-radius: 20px;
     background-color: goldenrod;
@@ -214,6 +200,21 @@ h3
 
 .options:hover
 {
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
+}
+
+.on-click
+{
+    display: grid;
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    margin: 10px auto;
+    padding: 2px;
+    border: 3px solid black;
+    border-radius: 20px;
     background-color: white;
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
