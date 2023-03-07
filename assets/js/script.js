@@ -9,7 +9,7 @@ const questions = [
         option2 : "The Nags Head",
         option3 : "The Rovers Return",
         option4 : "Moes Tavern",
-        correctAnswer : 2
+        correctAnswer : "option2"
     }
 ]
 //Below function is from the Love Maths Walkthrough project
@@ -100,7 +100,6 @@ function createQuestionPage()
 function startQuiz()
 {
     displayQuestion();
-    checkAnswer();
 }
 
 //get the parameters from the question and display them
@@ -122,24 +121,35 @@ function displayQuestion()
     pOptionsArray.shift();
     for(let pOption of pOptionsArray)
     {
-        pOption.addEventListener("click", myFunction);
+        pOption.addEventListener("click", selectAnswer);
     }
 
-    
+    setTimeout(checkAnswer, "2000");
 
 }
 
-function checkAnswer(option)
+function checkAnswer()
 {
-    sumbittedAnswer = option;
-    console.log(sumbittedAnswer);
+    console.log("Timeout successful");
+    /*-----------------------------------------------------*/
+    let str = questions[questionCounter].correctAnswer;
+    console.log(str);
+    // if (sumbittedAnswer === questions[questionCounter].correctAnswer)
+    // {
+    //     console.log("Correct!")
+    // }
+    // else
+    // {
+    //     console.log("Incorrect");
+    // }
+    
 }
 
-function myFunction(event)
+function selectAnswer(event)
 {
     let answerDataType = this.getAttribute("data-type");
-    let answerId = this.getAttribute("id");
-    console.log(answerId);
-    document.getElementById(answerId).classList.remove("options");
-    document.getElementById(answerId).classList.add("on-click");
+    sumbittedAnswer = this.getAttribute("id");
+    console.log(sumbittedAnswer);
+    document.getElementById(sumbittedAnswer).classList.remove("options");
+    document.getElementById(sumbittedAnswer).classList.add("on-click");
 }
