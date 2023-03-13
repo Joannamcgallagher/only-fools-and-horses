@@ -1,5 +1,6 @@
 let userName = "";
 let questionCounter = 0;
+let currentQuestion = 0;
 let nextQ = [];
 let sumbittedAnswer;
 const questions = [
@@ -100,6 +101,7 @@ function createQuestionPage()
 function startQuiz()
 {
     displayQuestion();
+    checkAnswer();
 }
 
 //get the parameters from the question and display them
@@ -125,23 +127,28 @@ function displayQuestion()
     }
 
     setTimeout(checkAnswer, "2000");
+    console.log("Timeout successful");
 
 }
 
 function checkAnswer()
 {
-    console.log("Timeout successful");
-    /*-----------------------------------------------------*/
-    let str = questions[questionCounter].correctAnswer;
-    console.log(str);
-    // if (sumbittedAnswer === questions[questionCounter].correctAnswer)
-    // {
-    //     console.log("Correct!")
-    // }
-    // else
-    // {
-    //     console.log("Incorrect");
-    // }
+    
+    console.log("checking answer");
+    let correctAns = String(questions[currentQuestion].correctAnswer);
+    console.log(correctAns);
+
+    if(sumbittedAnswer === correctAns)
+    {
+        console.log("Correct");
+    }
+
+    else
+    {
+        console.log("Incorrect");
+    }
+
+    //console.log(questions[Number(currentQuestion)].correctAnswer);
     
 }
 
