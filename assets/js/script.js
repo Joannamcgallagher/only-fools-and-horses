@@ -1,36 +1,19 @@
-//create global variables for username, score & questions.
 let userName = "";
-const currentScore = 0;
-let questionCount = 0;
-let qCountdisplay = 0;
-const questions = 
-[
+let questionCounter = 0;
+let currentQuestion = 0;
+let nextQ = [];
+let sumbittedAnswer;
+const questions = [
     {
-    question : "What's the name of the local pub where the Trotter family frequent?",
-    answers :
-    {
-        option1 : "The Nag's Head",
-        option2 : "The Queen Vic",
+        question : "What is the name of the local pub frequented by the Trotters? ",
+        option1 : "The Queen Vic",
+        option2 : "The Nags Head",
         option3 : "The Rovers Return",
-        option4 : "Moe's Tavern"
-    },
-    correctAnswer : "option1"
-
-    },
-    {
-        question : "What did Trigger call Rodney?",
-        answers :
-        {
-            option1 : "Rodney",
-            option2 : "Rod",
-            option3 : "Dave",
-            option4 : "Denzel"
-        },
-        correctAnswer : "option3"
+        option4 : "Moes Tavern",
+        correctAnswer : "option2"
     }
-];
-
-
+]
+//Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function()
 {
     let buttons = document.getElementsByTagName("button");
@@ -42,6 +25,13 @@ document.addEventListener("DOMContentLoaded", function()
             if(this.getAttribute("data-type") === "play-now")
             {
                 createUserDetailsPage();
+            }
+
+            if(this.getAttribute("data-type") === "lets-go")
+            {
+                userName = submitUserName();
+                createQuestionPage();
+                startQuiz();
             }
             
             if(this.getAttribute("data-type") === "lets-go")
@@ -72,85 +62,109 @@ function createUserDetailsPage()
     // button.remove();
 
     let buttons = document.getElementsByTagName("button");
-    console.log(buttons);
+
     for (let i = 0; i < buttons.length; i++)
     {
         buttons[i].classList.add("hide");
     }
-    console.log(buttons);
         
     // call the update div to re-style the question container
     document.getElementById("user-label").classList.remove("hide");
     document.getElementById("user-input").classList.remove("hide");
     document.getElementById("btn-lets-go").classList.remove("hide");
-    document.getElementById("question=container").classList.add("update-question-div");
+    document.getElementById("question-container").classList.add("update-question-div");
     document.getElementById("user-label").classList.add("user-label-style");
     document.getElementById("user-input").classList.add("user-input");
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
-/**
- * Retrieve the username from the input field and return the value of same
- */
-function getUserName()
+
+function submitUserName()
 {
-    let name = document.getElementById("user-input");
-    return(name).value;
+    return document.getElementById("user-input").value;
 }
-/**
- * Create function to hide the elements for the username so the questions can be loaded in
- */
-function hideUserInput()
+
+//create the display for the questions and multiple choice
+
+function createQuestionPage()
 {
+    console.log(userName);
+    //hide current elements
     document.getElementById("user-label").classList.remove("show");
     document.getElementById("user-input").classList.remove("show");
     document.getElementById("btn-lets-go").classList.remove("show");
     document.getElementById("user-label").classList.add("hide");
     document.getElementById("user-input").classList.add("hide");
     document.getElementById("btn-lets-go").classList.add("hide");
-    console.log("elements hidden");
-}
 
-function runGame()
-{
-    
-
-    //start the count for the questions & load the next question
-    
-    let nextQuestion = loadQuestion();
-    questionCount++;
-    qCountdisplay++;
-    displayQuestion(nextQuestion);
-    
-}
-
-function loadQuestion()
-{
-    let nextQ = [];
-    nextQ = questions[questionCount];
-    console.log(nextQ);
-    return nextQ;
-}
-
-function displayQuestion(nextQuestion)
-{
-    //start by showing the elements
-    document.getElementById("quesiion-header").classList.remove("hide");
-    document.getElementById("quesiion-header").classList.add("show");
+    //show question elements
+    document.getElementById("question-header").classList.remove("hide");
     document.getElementById("option1").classList.remove("hide");
-    document.getElementById("option1").classList.add("show");
     document.getElementById("option2").classList.remove("hide");
-    document.getElementById("option2").classList.add("show");
     document.getElementById("option3").classList.remove("hide");
-    document.getElementById("option3").classList.add("show");
     document.getElementById("option4").classList.remove("hide");
-    document.getElementById("option4").classList.add("show");
 
-    //populate the question & choices
-    document.getElementById("quesiion-header").textContent = (`Q${qCountdisplay} - ` + nextQuestion.question);
-    // document.getElementById("option1").textContent = nextQuestion.answers.option1.textContent;
-    // document.getElementById("option2").textContent = nextQuestion.option2;
-    // document.getElementById("option3").textContent = nextQuestion.option3;
-    // document.getElementById("option4").textContent = nextQuestion.option4;
+}
+
+//once the question elements are available, display the questions
+function startQuiz()
+{
+    displayQuestion();
+    checkAnswer();
+}
+
+//get the parameters from the question and display them
+function displayQuestion()
+{
+    document.getElementById("question-container").style.height = "300px"
+    document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
+    document.getElementById("option1").textContent = questions[questionCounter].option1;
+    document.getElementById("option2").textContent = questions[questionCounter].option2;
+    document.getElementById("option3").textContent = questions[questionCounter].option3;
+    document.getElementById("option4").textContent = questions[questionCounter].option4;
+    questionCounter++;
+    console.log(questionCounter);
+
+    //add event listeners to the p options
+    let pOptions = document.getElementsByTagName("p");
+    let pOptionsArray = Array.from(pOptions);
+    //remove the first p elemnt from the array - the intro paragraph
+    pOptionsArray.shift();
+    for(let pOption of pOptionsArray)
+    {
+        pOption.addEventListener("click", selectAnswer);
+    }
+
+    setTimeout(checkAnswer, "2000");
+    console.log("Timeout successful");
+
+}
+
+function checkAnswer()
+{
     
-    document.getElementById("option1").textContent = nextQ[answers][option1];
+    console.log("checking answer");
+    let correctAns = String(questions[currentQuestion].correctAnswer);
+    console.log(correctAns);
+
+    if(sumbittedAnswer === correctAns)
+    {
+        console.log("Correct");
+    }
+
+    else
+    {
+        console.log("Incorrect");
+    }
+
+    //console.log(questions[Number(currentQuestion)].correctAnswer);
+    
+}
+
+function selectAnswer(event)
+{
+    let answerDataType = this.getAttribute("data-type");
+    sumbittedAnswer = this.getAttribute("id");
+    console.log(sumbittedAnswer);
+    document.getElementById(sumbittedAnswer).classList.remove("options");
+    document.getElementById(sumbittedAnswer).classList.add("on-click");
 }

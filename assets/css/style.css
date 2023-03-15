@@ -30,12 +30,8 @@ a
 
 h3
 {
-
-}
-
-input[type='checkbox']
-{
-    display: grid;
+    margin: 5px 0px 25px 0px;
+    font-size: 150%
 }
 
 #logo
@@ -55,6 +51,7 @@ input[type='checkbox']
 
 .hide
 {
+    visibility: hidden;
     display: none;
 }
 /* Style the index.html image so it sits in the center of the page */
@@ -73,6 +70,7 @@ input[type='checkbox']
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
 
 #game-controls
 {
@@ -106,6 +104,11 @@ input[type='checkbox']
     box-shadow: 10px 10px 20px darkgray;
 }
 
+#question-container
+{
+    height: 200px;
+}
+
 /* Invert colors when button is hovered over */
 #play-now:hover, #instructions:hover, #high-scores:hover
 {
@@ -113,6 +116,12 @@ input[type='checkbox']
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
+/* button:hover --- Not working???
+{
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
+} */
 
 #button-inner button
 {
@@ -172,6 +181,42 @@ input[type='checkbox']
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
     margin-top: 40px;
+}
+
+.options
+{
+    display: grid;
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    margin: 10px auto;
+    padding: 2px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: goldenrod;
+    color: white;
+}
+
+.options:hover
+{
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
+}
+
+.on-click
+{
+    display: grid;
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    margin: 10px auto;
+    padding: 2px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 10px 10px 20px goldenrod;
 }
 
 

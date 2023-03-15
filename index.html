@@ -22,25 +22,25 @@
     </div>    
     </div>
     <div id = "game-controls">
-        <div id="question=container">
+        <div id="question-container">
             <p id="intro-paragraph">
                 Welcome to the only fools and horses quiz! <br> Here you can test your knowledge of the legendary Only Fools and Horses show and see how much you know about the 
                 Trotter family and their friends! <br> Click the instructions button below to check how to play the game or hit Play Now to get straight into it!
             </p>
             <label id="user-label" for="user-name" class="hide">Enter your name here : </label>
             <input type="text" name="user-name" id="user-input" class="hide"><br>
-            <button id="btn-lets-go" class="hide" data-type="lets-go">Lets Go!!</button>
-            <h3 id="quesiion-header" class="hide"></h3>
+            <button id="btn-lets-go" data-type="lets-go" class="hide">Lets Go!!</button>
+            <h3 id="question-header" class="hide">Question X</h3>
             <!-- multiple choices -->
-            <input type="checkbox" id="option1" name="option1" class="hide">
-            <!-- <label for="option1" id="label-quest-1" class="hide"></label> -->
-            <input type="checkbox" id="option2" class="hide" name="option2">
-            <!-- <label for="option2" id="label-quest-2" class="hide"></label> -->
-            <input type="checkbox" id="option3" name="option3" class="hide">
-            <!-- <label for="option3" id="label-quest-3" class="hide"></label> -->
-            <input type="checkbox" id="option4" name="option4" class="hide">
-            <!-- <label for="option4" id="label-quest-4" class="hide"></label> -->
-            <button id="submit-btn" class="hide">Submit</button>
+            <!-- <button id="option1" class="hide button-options" data-type="opt1">Answer 1<i class="fa-regular fa-circle-1"></i></button>
+            <button id="option2" class="hide button-options" data-type="opt2">Answer 2<i class="fa-regular fa-circle-2"></i></button>
+            <button id="option3" class="hide button-options" data-type="opt3">Answer 3<i class="fa-regular fa-circle-3"></i></button>
+            <button id="option4" class="hide button-options" data-type="opt4">Answer 4<i class="fa-regular fa-circle-4"></i></button> -->
+            <p id="option1" class="hide options" data-type="opt1">Answer 1</p>
+            <p id="option2" class="hide options" data-type="opt2">Answer 2</p>
+            <p id="option3" class="hide options" data-type="opt3">Answer 3</p>
+            <p id="option4" class="hide options" data-type="opt4">Answer 4</p>
+            
         </div>
         <div id="button-outer">
             <button id="play-now" data-type = "play-now">Play now!</button>
