@@ -28,6 +28,16 @@ a
     color: black;
 }
 
+h3
+{
+
+}
+
+input[type='checkbox']
+{
+    display: grid;
+}
+
 #logo
 {
     width: 90%;
@@ -45,8 +55,7 @@ a
 
 .hide
 {
-    visibility: hidden;
-    max-height: 0;
+    display: none;
 }
 /* Style the index.html image so it sits in the center of the page */
 #game-area-background

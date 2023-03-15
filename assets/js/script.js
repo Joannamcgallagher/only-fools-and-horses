@@ -1,6 +1,8 @@
 //create global variables for username, score & questions.
-const userName = "";
+let userName = "";
 const currentScore = 0;
+let questionCount = 0;
+let qCountdisplay = 0;
 const questions = 
 [
     {
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function()
                 userName = getUserName();
                 console.log(userName);
                 hideUserInput();
+                runGame();
             }
         })
     }
@@ -107,5 +110,47 @@ function hideUserInput()
     console.log("elements hidden");
 }
 
+function runGame()
+{
+    
 
+    //start the count for the questions & load the next question
+    
+    let nextQuestion = loadQuestion();
+    questionCount++;
+    qCountdisplay++;
+    displayQuestion(nextQuestion);
+    
+}
 
+function loadQuestion()
+{
+    let nextQ = [];
+    nextQ = questions[questionCount];
+    console.log(nextQ);
+    return nextQ;
+}
+
+function displayQuestion(nextQuestion)
+{
+    //start by showing the elements
+    document.getElementById("quesiion-header").classList.remove("hide");
+    document.getElementById("quesiion-header").classList.add("show");
+    document.getElementById("option1").classList.remove("hide");
+    document.getElementById("option1").classList.add("show");
+    document.getElementById("option2").classList.remove("hide");
+    document.getElementById("option2").classList.add("show");
+    document.getElementById("option3").classList.remove("hide");
+    document.getElementById("option3").classList.add("show");
+    document.getElementById("option4").classList.remove("hide");
+    document.getElementById("option4").classList.add("show");
+
+    //populate the question & choices
+    document.getElementById("quesiion-header").textContent = (`Q${qCountdisplay} - ` + nextQuestion.question);
+    // document.getElementById("option1").textContent = nextQuestion.answers.option1.textContent;
+    // document.getElementById("option2").textContent = nextQuestion.option2;
+    // document.getElementById("option3").textContent = nextQuestion.option3;
+    // document.getElementById("option4").textContent = nextQuestion.option4;
+    
+    document.getElementById("option1").textContent = nextQ[answers][option1];
+}
