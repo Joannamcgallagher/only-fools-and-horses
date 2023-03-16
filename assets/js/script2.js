@@ -2,7 +2,8 @@ let userName = "";
 let questionCounter = 0;
 let currentQuestion = 0;
 let nextQ = [];
-let sumbittedAnswer = "";
+let sumbittedAnswer;
+let userSubmitted = false;
 const questions = [{
     question: "What is the name of the local pub frequented by the Trotters? ",
     option1: "The Queen Vic",
@@ -23,23 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (this.getAttribute("data-type") === "lets-go") {
                 userName = submitUserName();
+                console.log(userName);
                 createQuestionPage();
                 startQuiz();
             }
-
-            // if (this.getAttribute("data-type") === "lets-go") {
-            //     //retrieve the username and store it in the global variable
-            //     userName = getUserName();
-            //     console.log(userName);
-            //     hideUserInput();
-            //     runGame();
-            // }
-
         })
     }
 
 })
-
 function createUserDetailsPage() {
     console.log("Button clicked");
 
@@ -68,15 +60,11 @@ function createUserDetailsPage() {
     document.getElementById("user-input").classList.add("user-input");
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
-
-function submitUserName() {
+function submitUserName()
+{
     return document.getElementById("user-input").value;
 }
-
-//create the display for the questions and multiple choice
-
 function createQuestionPage() {
-    console.log(userName);
     //hide current elements
     document.getElementById("user-label").classList.remove("show");
     document.getElementById("user-input").classList.remove("show");
@@ -93,14 +81,17 @@ function createQuestionPage() {
     document.getElementById("option4").classList.remove("hide");
 
 }
-
-//once the question elements are available, display the questions
 function startQuiz() 
 {
     displayQuestion();
+    //check if the userSubmitted is true and then check the answer.
+    if(userSubmitted = true)
+    {
+        checkAnswer();
+    }
+    
 }
 
-//get the parameters from the question and display them
 function displayQuestion() {
     document.getElementById("question-container").style.height = "300px"
     document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
@@ -110,15 +101,9 @@ function displayQuestion() {
     document.getElementById("option4").textContent = questions[questionCounter].option4;
     questionCounter++;
     console.log(questionCounter);
-    submitAnswer();
-}
+    
 
-function submitAnswer() 
-{
-    //set a timeout to stop tehe user clicking too quickly.
-    //setTimeout(checkAnswer, "2000");
-    console.log("Timeout successful");
-    //add event listeners to the p options
+    //add event listeners to the p elements
     let pOptions = document.getElementsByTagName("p");
     let pOptionsArray = Array.from(pOptions);
     //remove the first p elemnt from the array - the intro paragraph
@@ -128,38 +113,18 @@ function submitAnswer()
         pOption.addEventListener("click", function()
         {
             sumbittedAnswer = this.getAttribute("data-type");
+            //set the userSubmitted to true so we know the user has selected an option
+            userSubmitted = true;            
         }
         );
 
     }
-    console.log("checking answer");
-
-    if (sumbittedAnswer != "null")
-    {
-        checkAnswer();
-    }
     
 }
 
-function checkAnswer() {
-
+function checkAnswer()
+{
+    //get the value stored from the question and compare it to the value the user selected
     let correctAns = String(questions[currentQuestion].correctAnswer);
     console.log(correctAns);
-
-    if (sumbittedAnswer === correctAns) {
-        console.log("Correct");
-    } else {
-        console.log("Incorrect");
-    }
-
-    //console.log(questions[Number(currentQuestion)].correctAnswer);
-
 }
-
-// function selectAnswer(event) {
-//     let answerDataType = this.getAttribute("data-type");
-//     sumbittedAnswer = this.getAttribute("id");
-//     console.log(sumbittedAnswer);
-//     document.getElementById(sumbittedAnswer).classList.remove("options");
-//     document.getElementById(sumbittedAnswer).classList.add("on-click");
-// }
