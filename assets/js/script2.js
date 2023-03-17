@@ -29,6 +29,62 @@ const questions =
         option3: "Chelsea",
         option4: "Peckham",
         correctAnswer: "option4"
+    },
+    {
+        question: "Complete the phrase : This time next year, we will be.... ",
+        option1: "Millionaires",
+        option2: "Living the dream",
+        option3: "Rich",
+        option4: "Running the Nag's Head",
+        correctAnswer: "option1"
+    },
+    {
+        question: "What's the name of the govenor in the Nag's Head? ",
+        option1: "Richard",
+        option2: "Patrick",
+        option3: "Dave",
+        option4: "Michael",
+        correctAnswer: "option4"
+    },
+    {
+        question: "What's the block of flats called where the Trotters live? ",
+        option1: "Trellick Tower",
+        option2: "Peckhams Penthouses",
+        option3: "Nelson Mandela House",
+        option4: "Dunbeg Towers",
+        correctAnswer: "option3"
+    },
+    {
+        question: "What was Roy Slater's profession? ",
+        option1: "Chef",
+        option2: "Detective",
+        option3: "Painter",
+        option4: "Solicitor",
+        correctAnswer: "option2"
+    },
+    {
+        question: "What's the name of Del's and Raquel's son? ",
+        option1: "Rodney",
+        option2: "Derek",
+        option3: "Damien",
+        option4: "Dave",
+        correctAnswer: "option3"
+    },
+    {
+        question: "What actor played Grandad? ",
+        option1: "Leonard Pearse",
+        option2: "Buster Meryifield",
+        option3: "David Jason",
+        option4: "Nicholas Lyndhursy",
+        correctAnswer: "option1"
+    },
+    {
+        question: "What type of vehicle did the Trotter's use for Trotters Independent Traders? ",
+        option1: "Plymouth Junkerolla",
+        option2: "Reliant Robin",
+        option3: "Volkswagen Transporter",
+        option4: "Ford Escort",
+        correctAnswer: "option2"
     }
 ]
 //Below function is from the Love Maths Walkthrough project
@@ -53,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 function createUserDetailsPage() 
 {
-    document.getElementById("question-container").style.height = "200px";
+    document.getElementById("question-container").style.height = "250px";
     //hide the p element
     document.getElementById("intro-paragraph").classList.add("hide");
 
