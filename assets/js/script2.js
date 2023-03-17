@@ -85,10 +85,10 @@ function startQuiz()
 {
     displayQuestion();
     //check if the userSubmitted is true and then check the answer.
-    if(userSubmitted = true)
-    {
-        checkAnswer();
-    }
+    // if(userSubmitted = true)
+    // {
+    //     checkAnswer();
+    // }
     
 }
 
@@ -115,16 +115,25 @@ function displayQuestion() {
             sumbittedAnswer = this.getAttribute("data-type");
             //set the userSubmitted to true so we know the user has selected an option
             userSubmitted = true;            
+            checkAnswer();
         }
         );
-
     }
     
 }
 
 function checkAnswer()
 {
-    //get the value stored from the question and compare it to the value the user selected
+    //get the correct answer stored from the question
     let correctAns = String(questions[currentQuestion].correctAnswer);
     console.log(correctAns);
+    //compare the correct answer with the answer submitted
+    if (correctAns === sumbittedAnswer)
+    {
+        alert("Correct!");
+    }
+    else
+    {
+        alert("Tough luck!");
+    }
 }
