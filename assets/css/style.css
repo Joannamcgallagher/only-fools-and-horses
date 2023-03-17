@@ -75,6 +75,7 @@ h3
 #game-controls
 {
     width: 60%;
+    height: 150px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -106,7 +107,7 @@ h3
 
 #question-container
 {
-    height: 200px;
+    height: 150px;
 }
 
 /* Invert colors when button is hovered over */
@@ -204,6 +205,8 @@ h3
     box-shadow: 10px 10px 20px goldenrod;
 }
 
+
+
 .on-click
 {
     display: grid;
@@ -219,5 +222,10 @@ h3
     box-shadow: 10px 10px 20px goldenrod;
 }
 
+#score
+{
+    text-align: center;
+    font-size: 150%;
+}
 
 
