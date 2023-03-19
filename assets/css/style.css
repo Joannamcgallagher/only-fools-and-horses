@@ -234,15 +234,14 @@ or highlight the correct one if the user has selected the incorrect answer */
 {
     display: grid;
     text-align: center;
+    width: 40%;
     font-size: 150%;
     margin: 10px auto;
     padding: 2px;
     border: 3px solid black;
     border-radius: 20px;
-    background-color: white;
-    color: goldenrod;
-    width : 45%;
-    box-shadow: 10px 10px 20px yellow;
+    background-color: darkred;
+    color: white;;
 }
 
 

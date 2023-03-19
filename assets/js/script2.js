@@ -191,22 +191,25 @@ function displayQuestion() {
     {
         pOption.addEventListener("click", function()
         {
-            sumbittedAnswer = this.getAttribute("data-type");       
+            sumbittedAnswer = this.getAttribute("data-type"); 
+            //change the color of the p clicked to show that it was selcted
+           // document.getElementById(sumbittedAnswer).classList.remove(".correct-answer"); 
+            document.getElementById(sumbittedAnswer).classList.add("correct-answer");  
             let isCorrect = checkAnswer();
             if (isCorrect)
             {
                 incrementScore();
-                setTimeout("1000");
-                displayNextQuestion();
+                setTimeout(displayNextQuestion, 5000);
             }
             else
             {
-                setTimeout("1000");
-                displayNextQuestion();
+                setTimeout(displayNextQuestion, 5000);
             }
         }
+        
         );
     }
+    document.getElementById("answer-feedback").textContent = "";
     
 }
 
@@ -218,16 +221,14 @@ function checkAnswer()
     //compare the correct answer with the answer submitted
     if (correctAns === sumbittedAnswer)
     {
-        document.getElementById("answer-feedback").textContent = "Correct!!";
-        //highlight the correct one if the user has chosen so
-    
-        alert("Correct!");
+        document.getElementById("answer-feedback").textContent = "Lovely Jubbly!!";
         return true;
     }
     else
     {
-        alert("Tough luck!");
-        document.getElementById("answer-feedback").textContent = `Incorrect! The correct answer is ${questions[questionCounter].correctAnswer}`;
+        let showCorrectAnswer = questions[questionCounter].correctAnswer; //this will show the option 1, 2 etc.
+        //Now need to take that showCorrectAnswer and get the actual answer
+        document.getElementById("answer-feedback").textContent = `You Plonker! The correct answer is ${questions[questionCounter][showCorrectAnswer]}`;
         return false;
     }
 }
@@ -243,6 +244,12 @@ function displayNextQuestion()
     //increment both question counters
     questionCounter++;
     currentQuestion++;
+    //remove the previous selections and styles added to show button clicked
+    let pSelected = document.getElementsByTagName("p");
+    for(let p of pSelected)
+    {
+        p.classList.remove("correct-answer");
+    }
     document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
     document.getElementById("option2").textContent = questions[questionCounter].option2;
