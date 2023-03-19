@@ -103,10 +103,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 createQuestionPage();
                 startQuiz();
             }
+            if (this.getAttribute("data-type") === "instructions")
+            {
+                displayInstructions();
+            }
         })
     }
 
 })
+
+function displayInstructions()
+{
+    document.getElementById("intro-paragraph").textContent = 
+    `There are ten questions to be answered and these will be have possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
+    When you have read the questions, think carefully and then select the option you think is correct! You will be shown if this option is correct or not. If you have 
+    selected the correct answer, your score will be increased by 1, if not, your score will stay the same!`;
+}
 function createUserDetailsPage() 
 {
     document.getElementById("question-container").style.height = "250px";
@@ -206,8 +218,10 @@ function checkAnswer()
     //compare the correct answer with the answer submitted
     if (correctAns === sumbittedAnswer)
     {
-        alert("Correct!");
         document.getElementById("answer-feedback").textContent = "Correct!!";
+        //highlight the correct one if the user has chosen so
+    
+        alert("Correct!");
         return true;
     }
     else
