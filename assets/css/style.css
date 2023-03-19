@@ -34,6 +34,12 @@ h3
     font-size: 150%
 }
 
+audio
+{
+    width: 30%;
+    height: 15%;
+    opacity: 50%;
+}
 #logo
 {
     width: 90%;
