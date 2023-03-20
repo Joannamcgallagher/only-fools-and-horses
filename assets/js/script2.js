@@ -193,16 +193,22 @@ function displayQuestion() {
         {
             sumbittedAnswer = this.getAttribute("data-type"); 
             //change the color of the p clicked to show that it was selcted
-           // document.getElementById(sumbittedAnswer).classList.remove(".correct-answer"); 
+            //document.getElementById(sumbittedAnswer).classList.remove(".correct-answer"); 
             document.getElementById(sumbittedAnswer).classList.add("correct-answer");  
             let isCorrect = checkAnswer();
             if (isCorrect)
             {
                 incrementScore();
+                let audioCorrect = document.getElementById("audio-feedback");
+                audioCorrect.setAttribute("src", "../assets/audio/lovely-jubbly.mp3");
+                audioCorrect.play();
                 setTimeout(displayNextQuestion, 5000);
             }
             else
-            {
+            {   
+                let audioIncorrect = document.getElementById("audio-feedback");
+                audioIncorrect.setAttribute("src", "../assets/audio/plonker.mp3");
+                audioIncorrect.play();
                 setTimeout(displayNextQuestion, 5000);
             }
         }
