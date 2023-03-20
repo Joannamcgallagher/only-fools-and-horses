@@ -96,7 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute("data-type") === "play-now") {
                 createUserDetailsPage();
             }
-
+            if (this.getAttribute("data-type") === "mute-unmute")
+            {
+                toggleMute();
+            }
             if (this.getAttribute("data-type") === "lets-go") {
                 userName = submitUserName();
                 console.log(userName);
@@ -111,6 +114,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 })
+
+function toggleMute()
+{
+    //get all audio tags into an array so they can be looped through to be muted
+    let audioAll = document.getElementsByTagName("audio");
+    console.log(audioAll);
+    //use the Array function
+    let audioAllArray = Array.from(audioAll);
+    console.log(audioAllArray);
+    for (let audio in audioAll)
+    {
+        audio.muted = true;
+    }
+
+}
 
 function displayInstructions()
 {

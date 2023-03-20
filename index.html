@@ -19,8 +19,8 @@
     <div id="outer-image">
     <div id="game-area-background">
         <!-- https://www.w3schools.com/tags/att_audio_controls.asp -->
-        <audio id = "only-fools" controls autoplay>
-            <source type="audio/mp3">
+        <audio id = "only-fools" controls autoplay src="../assets/audio/theme.mp3">
+            <!-- <source type="audio/mp3"> -->
         </audio>
         <audio id="audio-feedback" src="../assets/audio/plonker.mp3"></audio>
         <div id = "game-area"></div>
@@ -52,7 +52,7 @@
                 <button id="instructions" data-type = "instructions">Instructions</button>
                 <button id="high-scores" data-type = "high-scores">High scores</button>
             </div>
-            <button id="button-mute"><i class="fa-sharp fa-solid fa-volume-xmark"></i></button>
+            <button id="button-mute" data-type="mute-unmute"><i class="fa-sharp fa-solid fa-volume-xmark"></i></button>
         </div>
     </div>
     <!-- Font awesome script -->
