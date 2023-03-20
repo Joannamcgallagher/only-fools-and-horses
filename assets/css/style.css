@@ -111,6 +111,19 @@ audio
     box-shadow: 10px 10px 20px darkgray;
 }
 
+#button-mute
+{
+    background-color: goldenrod;
+    color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px darkgray;
+    width: 10%;
+    margin-top: 10px;
+    height: 35px;
+    font-size: larger;
+}
+
 #question-container
 {
     height: 150px;
@@ -123,12 +136,6 @@ audio
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
-/* button:hover --- Not working???
-{
-    background-color: white;
-    color: goldenrod;
-    box-shadow: 10px 10px 20px goldenrod;
-} */
 
 #button-inner button
 {
