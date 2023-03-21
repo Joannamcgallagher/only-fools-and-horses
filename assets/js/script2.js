@@ -87,6 +87,49 @@ const questions =
         correctAnswer: "option2"
     }
 ]
+let highScores = 
+[
+    {
+        name : "Simon",
+        score : 9
+    },
+    {
+        name : "Mary",
+        score : 8
+    },
+    {
+        name : "Sandra",
+        score : 6
+    },
+    {
+        name : "Jimmy",
+        score : 5
+    },
+    {
+        name : "Fred",
+        score : 5
+    },
+    {
+        name : "Josie",
+        score : 5
+    },
+    {
+        name : "Maggie",
+        score : 4
+    },
+    {
+        name : "James",
+        score : 4
+    },
+    {
+        name : "Penelope",
+        score : 3
+    },
+    {
+        name : "Bob",
+        score : 2
+    }
+]
 //Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
@@ -152,8 +195,11 @@ function displayHighScores()
 
     document.getElementById("trophy").classList.remove("hide");
     document.getElementById("high-scores-table").classList.remove("hide");
+
+    //use the high scores declared and add the names and scores to the table element
     
     
+
 }
 function createUserDetailsPage() 
 {
