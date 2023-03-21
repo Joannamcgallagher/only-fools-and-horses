@@ -61,7 +61,7 @@ audio
     display: none;
 }
 /* Style the index.html image so it sits in the center of the page */
-#game-area-background
+.main-image
 {
     background: url("../images/del-rodney-grandad.jpg") no-repeat center center;
     height: 550px;
@@ -77,11 +77,29 @@ audio
     box-shadow: 10px 10px 20px darkgray;
 }
 
+#trophy
+{
+    text-align: center;
+    margin: 50px auto;
+    color: goldenrod;
+    font-size: 500%;
+}
+
+#high-scores-table
+{
+    width: 100%;
+    text-align: center;
+}
+/* Class to be called when the user clicks on the highscores button to use the game-area-background div to display the high scores */
+.high-scores-display
+{
+    background: none;
+}
 
 #game-controls
 {
     width: 60%;
-    height: 150px;
+    height: 130px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -126,7 +144,7 @@ audio
 
 #question-container
 {
-    height: 150px;
+    height: 130px;
 }
 
 /* Invert colors when button is hovered over */
