@@ -197,8 +197,33 @@ function displayHighScores()
     document.getElementById("high-scores-table").classList.remove("hide");
 
     //use the high scores declared and add the names and scores to the table element
-    
-    
+    let table = document.getElementById("high-scores-table");
+    console.log(highScores);
+
+    let newRow = table.insertRow(-1);
+    let newCell1 = newRow.insertCell(0);
+    let newCell2 = newRow.insertCell(1);
+    let cell1Data;
+    let cell2Data;
+    for (let hScore in highScores)
+    [     
+        console.log(hScore),
+        // cell1Data = document.createTextNode(score.name),
+        // cell2Data = document.createTextNode(score.score),
+        // newCell1.appendChild(cell1Data),
+        // newCell2.appendChild(cell2Data),
+    ]
+
+    // let newRow = table.insertRow(-1);
+    // let newCel = newRow.insertCell(0);
+    // let newCel = newRow.insertCell(1);
+
+    // let c1 = document.createTextNode("Max");
+    // let c2 = document.createTextNode(2);
+
+    // newCell.appendChild(c1);
+    // newCell2.appendChild(c2);
+
 
 }
 function createUserDetailsPage() 
