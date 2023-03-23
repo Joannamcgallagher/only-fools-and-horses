@@ -197,6 +197,7 @@ function displayHighScores()
     document.getElementById("high-scores-table").classList.remove("hide");
 
     //use the high scores declared and add the names and scores to the table element
+    // https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz
     let table = document.getElementById("high-scores-table");
     console.log(highScores);
     // let newRow = table.insertRow(-1);
@@ -222,11 +223,8 @@ function displayHighScores()
         let newRow = table.insertRow(-1);
         let newCell1 = newRow.insertCell(0);
         let newCell2 = newRow.insertCell(1);
-        let cell1Data = newRow.insertCell(0);
-        let cell2Data = newRow.insertCell(1);
-        //loop through each of the high scores
-        cell1Data.textContent = highScores[i].name;
-        cell2Data.textContent = highScores[i].score;
+        newCell1.textContent = highScores[i].name;
+        newCell2.textContent = highScores[i].score;
 
     }
 
