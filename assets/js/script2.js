@@ -199,30 +199,36 @@ function displayHighScores()
     //use the high scores declared and add the names and scores to the table element
     let table = document.getElementById("high-scores-table");
     console.log(highScores);
-
-    let newRow = table.insertRow(-1);
-    let newCell1 = newRow.insertCell(0);
-    let newCell2 = newRow.insertCell(1);
-    let cell1Data;
-    let cell2Data;
-    for (let hScore in highScores)
-    [     
-        console.log(hScore),
-        // cell1Data = document.createTextNode(score.name),
-        // cell2Data = document.createTextNode(score.score),
-        // newCell1.appendChild(cell1Data),
-        // newCell2.appendChild(cell2Data),
-    ]
-
     // let newRow = table.insertRow(-1);
-    // let newCel = newRow.insertCell(0);
-    // let newCel = newRow.insertCell(1);
+    // let newCell1 = newRow.insertCell(0);
+    // let newCell2 = newRow.insertCell(1);
+    // let cell1Data = newRow.insertCell(0);
+    // let cell2Data = newRow.insertCell(1);
 
-    // let c1 = document.createTextNode("Max");
-    // let c2 = document.createTextNode(2);
+    // cell1Data.textContent = highScores[0].name;
+    // cell2Data.textContent = highScores[0].score;
 
-    // newCell.appendChild(c1);
-    // newCell2.appendChild(c2);
+    // let newRow1 = table.insertRow(-1);
+    // let newCell3 = newRow1.insertCell(0);
+    // let newCell4 = newRow1.insertCell(1);
+    // let cell3Data = newRow1.insertCell(0);
+    // let cell4Data = newRow1.insertCell(1);
+
+    // cell3Data.textContent = highScores[1].name;
+    // cell4Data.textContent = highScores[2].score;
+    
+    for(let i = 0; i < highScores.length; i++)
+    {
+        let newRow = table.insertRow(-1);
+        let newCell1 = newRow.insertCell(0);
+        let newCell2 = newRow.insertCell(1);
+        let cell1Data = newRow.insertCell(0);
+        let cell2Data = newRow.insertCell(1);
+        //loop through each of the high scores
+        cell1Data.textContent = highScores[i].name;
+        cell2Data.textContent = highScores[i].score;
+
+    }
 
 
 }
