@@ -1,6 +1,6 @@
 let userName = "";
-let questionCounter = 0;
-let currentQuestion = 0;
+let questionCounter = 0; //Counter for referecing the questions in the object array
+let currentQuestion = 1; //Counter to display the number of the current question
 let nextQ = [];
 let sumbittedAnswer;
 let currentScore = 0;
@@ -75,7 +75,7 @@ const questions =
         option1: "Leonard Pearse",
         option2: "Buster Meryifield",
         option3: "David Jason",
-        option4: "Nicholas Lyndhursy",
+        option4: "Nicholas Lyndhurst",
         correctAnswer: "option1"
     },
     {
@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if (this.getAttribute("data-type") === "lets-go") {
                 userName = submitUserName();
-                console.log(userName);
                 createQuestionPage();
                 startQuiz();
             }
@@ -155,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if (this.getAttribute("data-type") === "high-scores")
             {
-                console.log("high scores clicked");
                 document.getElementById("only-fools").style.display = "none";
                 displayHighScores();
             }
@@ -193,7 +191,8 @@ function displayHighScores()
     //align the game-area-background div so the font awesome and table centers on the page
     document.getElementById("game-area-background").style.textAlign = "center";
 
-    document.getElementById("trophy").classList.remove("hide");
+   document.getElementById("trophy").classList.remove("hide");
+   
     document.getElementById("high-scores-table").classList.remove("hide");
 
     //use the high scores declared and add the names and scores to the table element
@@ -240,9 +239,6 @@ function createUserDetailsPage()
     document.getElementById("game-area-background").style.background = "url('assets/images/banner.png') no-repeat center center";
     document.getElementById("game-area-background").style.height = "275px"
     //remove the buttons
-    // let button = document.getElementById("play-now");
-    // button.remove();
-
     let buttons = document.getElementsByTagName("button");
 
     for (let i = 0; i < buttons.length; i++) {
@@ -304,8 +300,8 @@ function displayQuestion() {
         {
             sumbittedAnswer = this.getAttribute("data-type"); 
             //change the color of the p clicked to show that it was selcted
-            //document.getElementById(sumbittedAnswer).classList.remove(".correct-answer"); 
             document.getElementById(sumbittedAnswer).classList.add("correct-answer");  
+
             let isCorrect = checkAnswer();
             if (isCorrect)
             {
@@ -313,14 +309,33 @@ function displayQuestion() {
                 let audioCorrect = document.getElementById("audio-feedback");
                 audioCorrect.setAttribute("src", "../assets/audio/lovely-jubbly.mp3");
                 audioCorrect.play();
-                setTimeout(displayNextQuestion, 5000);
+                console.log(currentQuestion);
+                //check to see if the user has answered all questions and if not, display the next question. If yes, end the game.
+                if(currentQuestion < 2)
+                {
+                    setTimeout(displayNextQuestion, 5000);                    
+                }
+                else
+                {
+                    setTimeout(finishQuiz, 5000);
+                    return;
+                }
             }
             else
             {   
+                console.log(currentQuestion);
                 let audioIncorrect = document.getElementById("audio-feedback");
                 audioIncorrect.setAttribute("src", "../assets/audio/plonker.mp3");
                 audioIncorrect.play();
-                setTimeout(displayNextQuestion, 5000);
+                if (currentQuestion < 2)
+                {
+                    setTimeout(displayNextQuestion, 5000);
+                }
+                else
+                {
+                    setTimeout(finishQuiz, 5000);
+                    return;
+                }
             }
         }
         
@@ -333,8 +348,7 @@ function displayQuestion() {
 function checkAnswer()
 {
     //get the correct answer stored from the question
-    let correctAns = String(questions[currentQuestion].correctAnswer);
-    console.log(correctAns);
+    let correctAns = String(questions[questionCounter].correctAnswer);
     //compare the correct answer with the answer submitted
     if (correctAns === sumbittedAnswer)
     {
@@ -367,9 +381,44 @@ function displayNextQuestion()
     {
         p.classList.remove("correct-answer");
     }
-    document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
+    document.getElementById("question-header").textContent = `Q${currentQuestion} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
     document.getElementById("option2").textContent = questions[questionCounter].option2;
     document.getElementById("option3").textContent = questions[questionCounter].option3;
     document.getElementById("option4").textContent = questions[questionCounter].option4;
+    //clear the feedback from the previous answer
+    document.getElementById("answer-feedback").textContent = "";
+}
+
+function finishQuiz()
+{
+    console.log("Quiz finished");
+    //hide current question elements
+    document.getElementById("question-header").classList.add("hide");
+    document.getElementById("option1").classList.add("hide");
+    document.getElementById("option2").classList.add("hide");
+    document.getElementById("option3").classList.add("hide");
+    document.getElementById("option4").classList.add("hide");
+    document.getElementById("score").classList.add("hide");
+    document.getElementById("answer-feedback").classList.add("hide");
+
+    //update to show the user their score
+    document.getElementById("intro-paragraph").textContent =
+    `Congratulations ${userName}!! You have scored ${currentScore}! Check out the high scores table to see if you made it! You can 
+    always return to the homepage to play the game again!`;
+    document.getElementById("intro-paragraph").classList.remove("hide");
+
+    //show the buttons
+    // let buttons = document.getElementsByTagName("button");
+    // console.log(buttons);
+    // buttons.shift();
+    // for (let i = 0; i < buttons.length; i++) 
+    // {
+    //     buttons[i].classList.remove("hide");
+    //     // buttons[i].classList.add("show");
+    // }
+    document.getElementById("play-now").classList.remove("hide");
+    document.getElementById("play-now").style.marginTop = "20px";
+    document.getElementById("instructions").classList.remove("hide");
+    document.getElementById("high-scores").classList.remove("hide");
 }

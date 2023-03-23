@@ -114,14 +114,6 @@ tr:nth-child(even)
     font-size: 500%;
 }
 
-.star
-{
-    text-align: center;
-    margin: 50px auto;
-    color: goldenrod;
-    font-size: 400%;
-}
-
 #high-scores-table
 {
     width: 90%;
