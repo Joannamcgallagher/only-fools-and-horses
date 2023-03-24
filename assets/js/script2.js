@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 let userName = "";
 let questionCounter = 0; //Counter for referecing the questions in the object array
 let currentQuestion = 1; //Counter to display the number of the current question
