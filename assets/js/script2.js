@@ -200,23 +200,6 @@ function displayHighScores()
     // https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz
     let table = document.getElementById("high-scores-table");
     console.log(highScores);
-    // let newRow = table.insertRow(-1);
-    // let newCell1 = newRow.insertCell(0);
-    // let newCell2 = newRow.insertCell(1);
-    // let cell1Data = newRow.insertCell(0);
-    // let cell2Data = newRow.insertCell(1);
-
-    // cell1Data.textContent = highScores[0].name;
-    // cell2Data.textContent = highScores[0].score;
-
-    // let newRow1 = table.insertRow(-1);
-    // let newCell3 = newRow1.insertCell(0);
-    // let newCell4 = newRow1.insertCell(1);
-    // let cell3Data = newRow1.insertCell(0);
-    // let cell4Data = newRow1.insertCell(1);
-
-    // cell3Data.textContent = highScores[1].name;
-    // cell4Data.textContent = highScores[2].score;
     
     for(let i = 0; i < highScores.length; i++)
     {
@@ -257,7 +240,17 @@ function createUserDetailsPage()
 }
 function submitUserName()
 {
-    return document.getElementById("user-input").value;
+    let submittedtUserName = document.getElementById("user-input").value;
+    // https://www.tutorialspoint.com/check-if-value-is-empty-in-javascript#:~:text=Use%20the%20condition%20with%20%E2%80%9C%E2%80%9D%20and,fill%20the%20text%20box%20value.
+    if (submittedtUserName === "")
+    {
+        alert("Please enter a username. This should not be blank.")
+    }
+    else
+    {
+        return submittedtUserName;
+    }
+    
 }
 function createQuestionPage() {
     //hide current elements
