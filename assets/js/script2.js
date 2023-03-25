@@ -188,16 +188,21 @@ function toggleMute()
     {
         document.getElementById("only-fools").muted = true;
         document.getElementById("audio-feedback").muted = true;
+        document.getElementById("volume").classList.remove("fas", "fa-music");
+        document.getElementById("volume").classList.add("fas", "fa-volume-mute");
         audioOn = false;
     }
     else
     {
         document.getElementById("only-fools").muted = false;
         document.getElementById("audio-feedback").muted = false;
+        document.getElementById("volume").classList.remove("fas", "fa-volume-mute");
+        document.getElementById("volume").classList.add("fas", "fa-music");
         audioOn = true;
     }
-    
-
+    //change the i class
+    //fas fa-volume-mute"
+    //fas fa-music
 }
 
 function displayInstructions()
