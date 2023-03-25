@@ -134,8 +134,8 @@ let highScores =
 //Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
+    for (let button of buttons) 
+    {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "play-now") {
                 createUserDetailsPage();
@@ -144,11 +144,11 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 toggleMute();
             }
-            if (this.getAttribute("data-type") === "lets-go") {
-                userName = submitUserName();
-                createQuestionPage();
-                startQuiz();
-            }
+            // if (this.getAttribute("data-type") === "lets-go") {
+            //     userName = submitUserName();
+            //     createQuestionPage();
+            //     startQuiz();
+            //}
             if (this.getAttribute("data-type") === "instructions")
             {
                 displayInstructions();
@@ -160,6 +160,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     }
+    //Tutor support (Sean) provided the below to fix the form validation to ensure the user enters a username
+    //select the form
+    const formLetsGo = document.getElementById("form-lets-go");
+    //listen for the form submission
+    formLetsGo.addEventListener("submit", function(event)
+    {
+        //stop the page from reloading
+        event.preventDefault();
+        //get the form from the submit event, the target is the form
+        const form = event.target;
+        //get the inputs value with the name "username"
+        const userName = form.username.value;
+
+        console.log(userName);
+        createQuestionPage();
+        startQuiz();
+    })
 
 })
 
