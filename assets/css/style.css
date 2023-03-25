@@ -38,7 +38,8 @@ audio
 {
     width: 30%;
     height: 15%;
-    opacity: 50%;
+    /* opacity: 50%; */
+    display: none;
 }
 
 table
@@ -177,7 +178,7 @@ tr:nth-child(even)
 }
 
 /* Invert colors when button is hovered over */
-#play-now:hover, #instructions:hover, #high-scores:hover
+#play-now:hover, #instructions:hover, #high-scores:hover, #button-mute:hover
 {
     background-color: white;
     color: goldenrod;

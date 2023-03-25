@@ -5,6 +5,7 @@ let currentQuestion = 1; //Counter to display the number of the current question
 let nextQ = [];
 let sumbittedAnswer;
 let currentScore = 0;
+let audioOn = true;
 const questions = 
 [
     {
@@ -171,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //get the form from the submit event, the target is the form
         const form = event.target;
         //get the inputs value with the name "username"
-        const userName = form.username.value;
+        userName = form.username.value;
 
         console.log(userName);
         createQuestionPage();
@@ -182,16 +183,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleMute()
 {
-    //get all audio tags into an array so they can be looped through to be muted
-    let audioAll = document.getElementsByTagName("audio");
-    console.log(audioAll);
-    //use the Array function
-    let audioAllArray = Array.from(audioAll);
-    console.log(audioAllArray);
-    for (let audio in audioAll)
+    //Check to see if the audioOn is set to true or false
+    if (audioOn)
     {
-        audio.muted = true;
+        document.getElementById("only-fools").muted = true;
+        document.getElementById("audio-feedback").muted = true;
+        audioOn = false;
     }
+    else
+    {
+        document.getElementById("only-fools").muted = false;
+        document.getElementById("audio-feedback").muted = false;
+        audioOn = true;
+    }
+    
 
 }
 
