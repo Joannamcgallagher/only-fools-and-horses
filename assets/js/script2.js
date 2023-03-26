@@ -413,17 +413,16 @@ function finishQuiz() {
     always return to the homepage to play the game again!`;
     document.getElementById("intro-paragraph").classList.remove("hide");
 
-    //show the buttons
-    // let buttons = document.getElementsByTagName("button");
-    // console.log(buttons);
-    // buttons.shift();
-    // for (let i = 0; i < buttons.length; i++) 
-    // {
-    //     buttons[i].classList.remove("hide");
-    //     // buttons[i].classList.add("show");
-    // }
     document.getElementById("play-now").classList.remove("hide");
     document.getElementById("play-now").style.marginTop = "20px";
     document.getElementById("instructions").classList.remove("hide");
     document.getElementById("high-scores").classList.remove("hide");
+    console.log(userName);
+    //add the username and score to the highscores table if the value is greater than 0
+    if(currentScore > 0)
+    {
+        let newHighscore = {"name": userName, "score" : currentScore};
+        highScores.push(newHighscore);
+        //sort the array by score high to low
+    }
 }
