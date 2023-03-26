@@ -313,11 +313,12 @@ function displayQuestion() {
         {
             sumbittedAnswer = this.getAttribute("data-type"); 
             //change the color of the p clicked to show that it was selcted
-            document.getElementById(sumbittedAnswer).classList.add("correct-answer");  
+            
 
             let isCorrect = checkAnswer();
             if (isCorrect)
             {
+                document.getElementById(sumbittedAnswer).classList.add("correct-answer");  
                 incrementScore();
                 let audioCorrect = document.getElementById("audio-feedback");
                 audioCorrect.setAttribute("src", "../assets/audio/lovely-jubbly.mp3");
@@ -336,6 +337,7 @@ function displayQuestion() {
             }
             else
             {   
+                document.getElementById(sumbittedAnswer).classList.add("incorrect-answer");  
                 console.log(currentQuestion);
                 let audioIncorrect = document.getElementById("audio-feedback");
                 audioIncorrect.setAttribute("src", "../assets/audio/plonker.mp3");
@@ -393,6 +395,7 @@ function displayNextQuestion()
     for(let p of pSelected)
     {
         p.classList.remove("correct-answer");
+        p.classList.remove("incorrect-answer");
     }
     document.getElementById("question-header").textContent = `Q${currentQuestion} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;

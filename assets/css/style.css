@@ -301,6 +301,19 @@ or highlight the correct one if the user has selected the incorrect answer */
     padding: 2px;
     border: 3px solid black;
     border-radius: 20px;
+    background-color: darkgreen;
+    color: white;;
+}
+.incorrect-answer
+{
+    display: grid;
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    margin: 10px auto;
+    padding: 2px;
+    border: 3px solid black;
+    border-radius: 20px;
     background-color: darkred;
     color: white;;
 }
