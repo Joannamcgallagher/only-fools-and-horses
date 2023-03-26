@@ -370,6 +370,20 @@ or highlight the correct one if the user has selected the incorrect answer */
 {
     #question-container
     {
-        
+        height: 230px;       
+    }
+    #play-now
+    {
+        width: 70%;
+    }
+    #button-inner button
+    {
+        width: 30%;
+        font-size: 80%;
+    }
+    .options
+    {
+        width: 60%;
+        font-size: 100%;
     }
 }
