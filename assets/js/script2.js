@@ -145,11 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 toggleMute();
             }
-            // if (this.getAttribute("data-type") === "lets-go") {
-            //     userName = submitUserName();
-            //     createQuestionPage();
-            //     startQuiz();
-            //}
             if (this.getAttribute("data-type") === "instructions")
             {
                 displayInstructions();
@@ -183,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleMute()
 {
-    //Check to see if the audioOn is set to true or false
+    //Check to see if the audioOn is set to true or false and update the icon depending on if the audio is on or not
     if (audioOn)
     {
         document.getElementById("only-fools").muted = true;
@@ -200,9 +195,6 @@ function toggleMute()
         document.getElementById("volume").classList.add("fas", "fa-music");
         audioOn = true;
     }
-    //change the i class
-    //fas fa-volume-mute"
-    //fas fa-music
 }
 
 function displayInstructions()
@@ -251,7 +243,6 @@ function createUserDetailsPage()
     document.getElementById("game-area-background").style.height = "275px"
     //remove the buttons
     let buttons = document.getElementsByTagName("button");
-
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.add("hide");
     }
@@ -260,6 +251,7 @@ function createUserDetailsPage()
     document.getElementById("user-label").classList.remove("hide");
     document.getElementById("user-input").classList.remove("hide");
     document.getElementById("btn-lets-go").classList.remove("hide");
+    document.getElementById("button-mute").classList.remove("hide");
     document.getElementById("question-container").classList.add("update-question-div");
     document.getElementById("user-label").classList.add("user-label-style");
     document.getElementById("user-input").classList.add("user-input");
