@@ -326,6 +326,10 @@ or highlight the correct one if the user has selected the incorrect answer */
 @media screen and (max-width: 600px)
 {
     /* Main image, intro paragraphy and buttons */
+    h3
+    {
+        margin: 5px;;
+    }
     #logo
     {
         font-size: 125%;
@@ -363,6 +367,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     .options
     {
         font-size: 100%;
+        width: 60%;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -387,3 +392,26 @@ or highlight the correct one if the user has selected the incorrect answer */
         font-size: 100%;
     }
 }
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+    #button-inner button
+    {
+        width: 35%;
+        font-size: 120%;
+    }
+    .options
+    {
+        width: 70%;
+        font-size: 120%;
+    }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+    #question-container
+    {
+        height: 150px;;
+    }
+}
+
