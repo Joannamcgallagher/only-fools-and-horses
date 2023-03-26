@@ -220,7 +220,24 @@ function displayHighScores() {
     //if the user has already played the game
     else
     {
-        
+        document.getElementById("question-container").classList.add("hide");
+        document.getElementById("game-area-background").style.background = "none";
+        document.getElementById("game-area-background").classList.add("high-scores-display");
+        document.getElementById("trophy").classList.remove("hide");
+        document.getElementById("game-area-background").style.textAlign = "center";
+        document.getElementById("high-scores-table").classList.remove("hide");
+        document.getElementById("game-area-background").style.height = "550px";
+        let table = document.getElementById("high-scores-table");
+        console.log(highScores);
+
+        for (let i = 0; i < highScores.length; i++) {
+            let newRow = table.insertRow(-1);
+            let newCell1 = newRow.insertCell(0);
+            let newCell2 = newRow.insertCell(1);
+            newCell1.textContent = highScores[i].name;
+            newCell2.textContent = highScores[i].score;
+
+        }
     }
 
 
