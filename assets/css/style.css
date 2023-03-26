@@ -321,3 +321,30 @@ or highlight the correct one if the user has selected the incorrect answer */
 }
 
 
+/* Media Queries */
+/* For small screen size from 600px wide and down */
+@media screen and (max-width: 600px)
+{
+    /* Main image, intro paragraphy and buttons */
+    #logo
+    {
+        font-size: 125%;
+    }
+    #button-outer
+    {
+        clear: both;
+        
+    }
+    #question-container
+    {
+        height: 320px;
+    }
+    #play-now
+    {
+        width: 100%;
+    }
+    #button-outer button
+    {
+        width: 100%;
+    }
+}

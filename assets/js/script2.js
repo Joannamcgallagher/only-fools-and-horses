@@ -132,6 +132,8 @@ let highScores = [{
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
+        //https://www.w3schools.com/jsref/prop_style_cursor.asp
+        button.style.cursor = "pointer";
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "play-now") {
                 createUserDetailsPage();
@@ -193,8 +195,7 @@ function displayInstructions() {
 
 function displayHighScores() {
     //check to see if the user has already completed the quiz as the page style will be different if so
-    if (userName === "") 
-    {
+    if (userName === "") {
         document.getElementById("game-area-background").classList.add("high-scores-display");
         //align the game-area-background div so the font awesome and table centers on the page
         document.getElementById("game-area-background").style.textAlign = "center";
@@ -218,8 +219,7 @@ function displayHighScores() {
         }
     }
     //if the user has already played the game
-    else
-    {
+    else {
         document.getElementById("question-container").classList.add("hide");
         document.getElementById("game-area-background").style.background = "none";
         document.getElementById("game-area-background").classList.add("high-scores-display");
@@ -315,14 +315,13 @@ function displayQuestion() {
     //add event listeners to the p elements
     let pOptions = document.getElementsByTagName("p");
     let pOptionsArray = Array.from(pOptions);
-    //remove the first p elemnt from the array - the intro paragraph
+    //remove the first p element from the array - the intro paragraph
     pOptionsArray.shift();
     for (let pOption of pOptionsArray) {
+        pOption.style.cursor = "pointer";
         pOption.addEventListener("click", function () {
                 sumbittedAnswer = this.getAttribute("data-type");
                 //change the color of the p clicked to show that it was selcted
-
-
                 let isCorrect = checkAnswer();
                 if (isCorrect) {
                     document.getElementById(sumbittedAnswer).classList.add("correct-answer");
@@ -421,9 +420,11 @@ function finishQuiz() {
     document.getElementById("high-scores").classList.remove("hide");
     console.log(userName);
     //add the username and score to the highscores table if the value is greater than 0
-    if(currentScore > 0)
-    {
-        let newHighscore = {"name": userName, "score" : currentScore};
+    if (currentScore > 0) {
+        let newHighscore = {
+            "name": userName,
+            "score": currentScore
+        };
         highScores.push(newHighscore);
         //sort the array by score high to low
     }
