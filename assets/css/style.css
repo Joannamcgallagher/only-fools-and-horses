@@ -338,6 +338,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     #question-container
     {
         height: 320px;
+
     }
     #play-now
     {
@@ -346,5 +347,29 @@ or highlight the correct one if the user has selected the incorrect answer */
     #button-outer button
     {
         width: 100%;
+    }
+    .main-image
+    {
+        width: 90%;
+    }
+    #game-controls
+    {
+        width: 90%;
+    }
+    #btn-lets-go
+    {
+        width: 70%;
+    }
+    .options
+    {
+        font-size: 100%;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px)
+{
+    #question-container
+    {
+        
     }
 }

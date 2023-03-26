@@ -188,9 +188,8 @@ function toggleMute() {
 
 function displayInstructions() {
     document.getElementById("intro-paragraph").textContent =
-        `There are ten questions to be answered and these will be have possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
-    When you have read the questions, think carefully and then select the option you think is correct! You will be shown if this option is correct or not. If you have 
-    selected the correct answer, your score will be increased by 1, if not, your score will stay the same!`;
+        `There are ten questions to be answered and these will be have 4 possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
+    Read the questions, think carefully and then select an option! The game will let you know if you are right or wrong!`;
 }
 
 function displayHighScores() {
@@ -199,7 +198,7 @@ function displayHighScores() {
         document.getElementById("game-area-background").classList.add("high-scores-display");
         //align the game-area-background div so the font awesome and table centers on the page
         document.getElementById("game-area-background").style.textAlign = "center";
-
+        document.getElementById("intro-paragraph").classList.add("hide");
         document.getElementById("trophy").classList.remove("hide");
 
         document.getElementById("high-scores-table").classList.remove("hide");
