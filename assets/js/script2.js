@@ -264,7 +264,9 @@ function createUserDetailsPage() {
     document.getElementById("button-mute").classList.remove("hide");
     document.getElementById("question-container").classList.add("update-question-div");
     document.getElementById("user-label").classList.add("user-label-style");
+    //https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/
     document.getElementById("user-input").classList.add("user-input");
+    document.getElementById("user-input").focus();
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
 

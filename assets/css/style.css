@@ -302,6 +302,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     border: 3px solid black;
     border-radius: 20px;
     background-color: darkgreen;
+    box-shadow: 10px 10px 20px darkgreen;
     color: white;;
 }
 .incorrect-answer
@@ -315,6 +316,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     border: 3px solid black;
     border-radius: 20px;
     background-color: darkred;
+    box-shadow: 10px 10px 20px darkred;
     color: white;;
 }
 
