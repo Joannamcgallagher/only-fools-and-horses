@@ -15,33 +15,27 @@ h1
     text-transform: uppercase;
     margin-top: 30px;
 }
-
 h1 i
 {
     margin-left: 20px;
     color: goldenrod;
 }
-
 a
 {
     text-decoration: none;
     color: black;
 }
-
 h3
 {
     margin: 5px 0px 25px 0px;
     font-size: 150%
 }
-
+/* Hide the audio controls */
 audio
 {
-    width: 30%;
-    height: 15%;
-    /* opacity: 50%; */
     display: none;
 }
-
+/* Style table containing high scores */
 table
 {
     text-align: center;
@@ -52,24 +46,24 @@ table
     margin: 0 auto 0 auto;
     padding: 5px;
 }
-
+/* table elements */
 td
 {
     width: 45%;
     text-align: center;
 }
-
 th
 {
     text-decoration: underline;
     font-size: larger;
 }
 /* https://www.w3schools.com/css/css_table_style.asp */
+/* Style the rows in the table to that evevry second row is shown is a different color */
 tr:nth-child(even) 
 {
     background-color: #f2f2f2;
 }
-
+/* Main logo with an font awesome icon */
 #logo
 {
     width: 90%;
@@ -78,13 +72,13 @@ tr:nth-child(even)
     margin-right: auto;
 
 }
-
-/* Create show and hidden classes to show and hide elements on index.html */
+/*Show class to call when the elements are to be displayed */
 .show 
 {
     visibility: visible;
 }
-
+/* Hide class to call when the elements are to be hidden with display none being declared so the elements do not take up any space on the page
+when hidden */
 .hide
 {
     visibility: hidden;
@@ -106,7 +100,7 @@ tr:nth-child(even)
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
-
+/* Icon on the high scores table style */
 #trophy
 {
     text-align: center;
@@ -114,7 +108,6 @@ tr:nth-child(even)
     color: goldenrod;
     font-size: 500%;
 }
-
 #high-scores-table
 {
     width: 90%;
@@ -125,7 +118,7 @@ tr:nth-child(even)
 {
     background: none;
 }
-
+/* Style the div where the majority of the elements are */
 #game-controls
 {
     width: 60%;
@@ -133,19 +126,18 @@ tr:nth-child(even)
     margin-left: auto;
     margin-right: auto;
 }
-
 #intro-paragraph
 {
     text-align: center;
     margin-top: 2%;
     font-size: 20px;
 }
-
+/* Div containing the buttons to navigate through the site */
 #button-outer
 {
     text-align: center;
 }
-
+/* Button styles to keep in line with the color scheme */
 #play-now
 {
     width: 50%;
@@ -158,7 +150,6 @@ tr:nth-child(even)
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
-
 #button-mute
 {
     background-color: goldenrod;
@@ -171,12 +162,10 @@ tr:nth-child(even)
     height: 35px;
     font-size: larger;
 }
-
 #question-container
 {
     height: 130px;
 }
-
 /* Invert colors when button is hovered over */
 #play-now:hover, #instructions:hover, #high-scores:hover, #button-mute:hover
 {
@@ -184,7 +173,7 @@ tr:nth-child(even)
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
-
+/* target all the buttons in the div button-inner */
 #button-inner button
 {
     margin-top: 10px;
@@ -198,7 +187,6 @@ tr:nth-child(even)
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
-
 /* Create a class to be called to style the question-container when the play-now button is clicked */
 .update-question-div
 {
@@ -209,7 +197,6 @@ tr:nth-child(even)
     margin-top: 30px;
     text-align: center;
 }
-
 /* Create styles for the label and input once it's visible */
 .user-label-style
 {
@@ -218,7 +205,7 @@ tr:nth-child(even)
     height: 30px;
     font-size: 25px;
 }
-
+/* Style the input field where the suer enters their name */
 .user-input
 {
     margin-top: 50px;
@@ -244,7 +231,7 @@ tr:nth-child(even)
     box-shadow: 10px 10px 20px darkgray;
     margin-top: 40px;
 }
-
+/* Style the p elements for the questions multiple choices */
 .options
 {
     display: grid;
@@ -258,16 +245,14 @@ tr:nth-child(even)
     background-color: goldenrod;
     color: white;
 }
-
+/* Style the button so the colors invert when hovered over */
 .options:hover
 {
     background-color: white;
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
-
-
-
+/* Style the button when the user clicks on it */
 .on-click
 {
     display: grid;
@@ -282,14 +267,13 @@ tr:nth-child(even)
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
-
+/* Display for current score */
 #score
 {
     text-align: center;
     font-size: 150%;
 }
-
-/* Class to be applied when the user has clicked an option so it will show if the user has selected the correct answer 
+/* Classes to be applied when the user has clicked an option so it will show if the user has selected the correct answer 
 or highlight the correct one if the user has selected the incorrect answer */
 .correct-answer
 {
@@ -319,8 +303,6 @@ or highlight the correct one if the user has selected the incorrect answer */
     box-shadow: 10px 10px 20px darkred;
     color: white;;
 }
-
-
 /* Media Queries */
 /* For small screen size from 600px wide and down */
 @media screen and (max-width: 600px)

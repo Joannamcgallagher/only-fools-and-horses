@@ -14,13 +14,16 @@
 </head>
 
 <body>
+    <!-- H1 to show title and link back to index.html -->
     <a href="index.html">
         <h1 id="logo"></i>Only Fools and Horses quiz<i class="fa-solid fa-bolt-lightning"></i></h1>
     </a>
     </div>
     <div id="outer-image">
+        <!-- Div for main image and for trophy icon when the highscores button is clicked -->
         <div id="game-area-background" class="main-image">
             <i class="fa-solid fa-trophy hide" id="trophy"></i>
+            <!-- table to display the high scores which will be loaded from script.js -->
             <table id="high-scores-table" class="hide">
                 <tr>
                     <th>Name</th>
@@ -32,6 +35,7 @@
                 </tr>
             </table>
             <!-- https://www.w3schools.com/tags/att_audio_controls.asp -->
+            <!-- Audio when the quiz is loaded and to give feedback when the user clicks on an answer whether it's correct or incorrect -->
             <audio id="only-fools" controls autoplay src="../assets/audio/theme.mp3">
             </audio>
             <audio id="audio-feedback" src="../assets/audio/plonker.mp3"></audio>
@@ -46,39 +50,43 @@
                 Trotter family and their friends! <br> Click the instructions button below to check how to play the game
                 or hit Play Now to get straight into it!
             </p>
+            <!-- Form to show when the user clicks to start the quiz and display the elements so they can input their name -->
             <form id="form-lets-go">
                 <label id="user-label" for="user-name" class="hide">Enter your name here : </label>
                 <!--  -->
                 <input required type="text" name="username" id="user-input" class="hide" required><br>
                 <input type="submit" id="btn-lets-go" data-type="lets-go" class="hide" value="Lets Go!!">
             </form>
+            <!-- Elements to be displayed when the user starts the quiz. These are hidden at first and will add the show class when needed -->
             <h3 id="question-header" class="hide">Question X</h3>
             <!-- multiple choices -->
             <p id="option1" class="hide options" data-type="option1">Answer 1</p>
             <p id="option2" class="hide options" data-type="option2">Answer 2</p>
             <p id="option3" class="hide options" data-type="option3">Answer 3</p>
             <p id="option4" class="hide options" data-type="option4">Answer 4</p>
+            <!-- Div containing p elements and a span to show the users current score -->
             <div id="score" class="hide">
                 <p>Current score : <span id="current-score">0</span></p>
+                <!-- This will display whether or not the user has entered correctly. If not, it will display the correct answer -->
                 <p id="answer-feedback" class="hide"></p>
             </div>
         </div>
+        <!-- Buttons to navigate the site -->
         <div id="button-outer">
             <button id="play-now" data-type="play-now">Play now!</button>
             <div id="button-inner">
                 <button id="instructions" data-type="instructions">Instructions</button>
                 <button id="high-scores" data-type="high-scores">High scores</button>
             </div>
+            <!-- Mute button which will mute the sound if the user clicks or unmute the sound if the sound is already muted -->
+            <!-- Also contains a font awesome icon -->
             <button id="button-mute" data-type="mute-unmute"><i class="fas fa-music" id="volume"></i></button>
-            <!-- <i class="fas fa-volume-mute"></i> works
-                <i class="fas fa-music"></i>
-             -->
         </div>
     </div>
     <!-- Font awesome script -->
     <script src="https://kit.fontawesome.com/d0daf359ec.js" crossorigin="anonymous"></script>
     <!-- Javescript file -->
-    <script src="assets/js/script2.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
