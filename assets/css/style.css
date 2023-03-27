@@ -387,7 +387,7 @@ or highlight the correct one if the user has selected the incorrect answer */
         width: 70%;
         font-size: 120%;
     }
-
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px)
 {
@@ -396,4 +396,3 @@ or highlight the correct one if the user has selected the incorrect answer */
         height: 150px;;
     }
 }
-
