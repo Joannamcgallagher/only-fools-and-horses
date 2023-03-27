@@ -136,7 +136,16 @@ document.addEventListener("DOMContentLoaded", function () {
         button.style.cursor = "pointer";
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "play-now") {
-                createUserDetailsPage();
+                //check to see if the user has already played the quiz as the elements will display incorrectly is so
+                if (userName = "")
+                {
+                    createUserDetailsPage();
+                }
+                else
+                {
+                    restyleDisplay()
+                    createUserDetailsPage();
+                }
             }
             if (this.getAttribute("data-type") === "mute-unmute") {
                 toggleMute();
@@ -250,7 +259,7 @@ function createUserDetailsPage() {
     //change the main image and make set the height smaller
     document.getElementById("game-area-background").style.background = "url('assets/images/banner.png') no-repeat center center";
     document.getElementById("game-area-background").style.height = "275px"
-    //remove the buttons
+    //remove the buttons from the display
     let buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.add("hide");
@@ -431,12 +440,10 @@ function finishQuiz() {
         `Congratulations ${userName}!! You have scored ${currentScore}! Check out the high scores table to see if you made it! You can 
     always return to the homepage to play the game again!`;
     document.getElementById("intro-paragraph").classList.remove("hide");
-
     document.getElementById("play-now").classList.remove("hide");
     document.getElementById("play-now").style.marginTop = "20px";
     document.getElementById("instructions").classList.remove("hide");
     document.getElementById("high-scores").classList.remove("hide");
-    console.log(userName);
     //add the username and score to the highscores table if the value is greater than 0
     if (currentScore > 0) {
         let newHighscore = {
@@ -446,4 +453,11 @@ function finishQuiz() {
         highScores.push(newHighscore);
         //sort the array by score high to low
     }
+}
+function restyleDisplay()
+{
+    document.getElementById("high-scores-table").classList.add("hide");
+    document.getElementById("trophy").classList.add("hide");
+    document.getElementById("question-container").classList.remove("hide");
+    document.getElementById("form-lets-go").classList.remove("hide");
 }
