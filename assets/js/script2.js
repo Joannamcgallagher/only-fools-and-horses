@@ -161,16 +161,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const form = event.target;
         //get the inputs value with the name "username"
         userName = form.username.value;
-
         console.log(userName);
         createQuestionPage();
         startQuiz();
     })
 
 })
-
+/**
+ * Function to toggle the sound depending on whether the user has clicked on the button displayed.
+ * This also updates the icon from font awesome
+ */
 function toggleMute() {
-    //Check to see if the audioOn is set to true or false and update the icon depending on if the audio is on or not
     if (audioOn) {
         document.getElementById("only-fools").muted = true;
         document.getElementById("audio-feedback").muted = true;
@@ -185,13 +186,18 @@ function toggleMute() {
         audioOn = true;
     }
 }
-
+/**
+ * Function to display the instructions for the user. It updates the p element on index.html
+ */
 function displayInstructions() {
     document.getElementById("intro-paragraph").textContent =
         `There are ten questions to be answered and these will be have 4 possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
     Read the questions, think carefully and then select an option! The game will let you know if you are right or wrong!`;
 }
-
+/**
+ * Function to display the highscores provided in the array of objects. It also determines if the user has already played the game. If so, the layout of the page
+ * will slightly differ so it needs to be udpated for the table to display correctly.
+ */
 function displayHighScores() {
     //check to see if the user has already completed the quiz as the page style will be different if so
     if (userName === "") {
@@ -200,21 +206,17 @@ function displayHighScores() {
         document.getElementById("game-area-background").style.textAlign = "center";
         document.getElementById("intro-paragraph").classList.add("hide");
         document.getElementById("trophy").classList.remove("hide");
-
         document.getElementById("high-scores-table").classList.remove("hide");
-
         //use the high scores declared and add the names and scores to the table element
         // https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz
         let table = document.getElementById("high-scores-table");
         console.log(highScores);
-
         for (let i = 0; i < highScores.length; i++) {
             let newRow = table.insertRow(-1);
             let newCell1 = newRow.insertCell(0);
             let newCell2 = newRow.insertCell(1);
             newCell1.textContent = highScores[i].name;
             newCell2.textContent = highScores[i].score;
-
         }
     }
     //if the user has already played the game
@@ -228,7 +230,6 @@ function displayHighScores() {
         document.getElementById("game-area-background").style.height = "550px";
         let table = document.getElementById("high-scores-table");
         console.log(highScores);
-
         for (let i = 0; i < highScores.length; i++) {
             let newRow = table.insertRow(-1);
             let newCell1 = newRow.insertCell(0);
@@ -238,15 +239,14 @@ function displayHighScores() {
 
         }
     }
-
-
 }
-
+/**
+ * Function called to style the page and show/hide elements which the uer will be shown in order for them to enter their username
+ */
 function createUserDetailsPage() {
     document.getElementById("question-container").style.height = "250px";
     //hide the p element
     document.getElementById("intro-paragraph").classList.add("hide");
-
     //change the main image and make set the height smaller
     document.getElementById("game-area-background").style.background = "url('assets/images/banner.png') no-repeat center center";
     document.getElementById("game-area-background").style.height = "275px"
@@ -255,7 +255,6 @@ function createUserDetailsPage() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.add("hide");
     }
-
     // call the update div to re-style the question container
     document.getElementById("user-label").classList.remove("hide");
     document.getElementById("user-input").classList.remove("hide");
@@ -263,12 +262,14 @@ function createUserDetailsPage() {
     document.getElementById("button-mute").classList.remove("hide");
     document.getElementById("question-container").classList.add("update-question-div");
     document.getElementById("user-label").classList.add("user-label-style");
-    //https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/
     document.getElementById("user-input").classList.add("user-input");
+    //https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/
     document.getElementById("user-input").focus();
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
-
+/**
+ * Function to retrieve the username the suer has entered and to store it in the global variable above so it can be accessed later on
+ */
 function submitUserName() {
     let submittedtUserName = document.getElementById("user-input").value;
     // https://www.tutorialspoint.com/check-if-value-is-empty-in-javascript#:~:text=Use%20the%20condition%20with%20%E2%80%9C%E2%80%9D%20and,fill%20the%20text%20box%20value.
@@ -277,9 +278,10 @@ function submitUserName() {
     } else {
         return submittedtUserName;
     }
-
 }
-
+/**
+ * Function to style the quiz including containers, headers, options and buttons etc. Mutliple elements have classes that are added or removed
+ */
 function createQuestionPage() {
     //hide current elements
     document.getElementById("user-label").classList.remove("show");
@@ -298,11 +300,17 @@ function createQuestionPage() {
     document.getElementById("score").classList.remove("hide");
     document.getElementById("answer-feedback").classList.remove("hide");
 }
-
+/**
+ * Function to start the quiz by displaying the question.
+ */
 function startQuiz() {
     displayQuestion();
 }
-
+/**
+ * Function to style the question part of the quiz. There are event listeners added to the p elements here so when a usesr clicks on an option/answer,
+ * the function will apply the relevant audio, call the check the answer function and display the next question when a timeout
+ * of 5 seconds has passed. The answer-feedback element is also cleared on completion of the function so it does not show when the next question is loadedd.
+ */
 function displayQuestion() {
     document.getElementById("question-container").style.height = "350px"
     document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
@@ -356,7 +364,10 @@ function displayQuestion() {
     document.getElementById("answer-feedback").textContent = "";
 
 }
-
+/**
+ * Function to check whether the option that the user selected is correct or incorrect and returns true or false.
+ * Function also displays the correct answer if the user has selected an incorrect answer.
+ */
 function checkAnswer() {
     //get the correct answer stored from the question
     let correctAns = String(questions[questionCounter].correctAnswer);
@@ -371,12 +382,16 @@ function checkAnswer() {
         return false;
     }
 }
-
+/**
+ * Function to increment the score if the user has answered correctly.
+ */
 function incrementScore() {
     currentScore++;
     document.getElementById("current-score").textContent = currentScore;
 }
-
+/**
+ * Function to display the next question in the array. Before doing that, it will revert the selected options styles to the default style set in style.css
+ */
 function displayNextQuestion() {
     //increment both question counters
     questionCounter++;
@@ -395,7 +410,11 @@ function displayNextQuestion() {
     //clear the feedback from the previous answer
     document.getElementById("answer-feedback").textContent = "";
 }
-
+/**
+ * Function to finish the quiz once the user has answered all 10 questions. Hides the current elements displayed and updates the p element to show the 
+ * users name and score. If the user has scored greater than 0, the name and score will be added to the highscores table that the user can click on and 
+ * view
+ */
 function finishQuiz() {
     console.log("Quiz finished");
     //hide current question elements
