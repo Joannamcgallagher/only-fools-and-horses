@@ -6,6 +6,7 @@ let nextQ = [];
 let sumbittedAnswer;
 let currentScore = 0;
 let audioOn = true;
+let hasPlayed = false; //update this when the user has played so the elements can be reset should they play again
 const questions = [{
         question: "What is the name of the local pub frequented by the Trotters? ",
         option1: "The Queen Vic",
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "play-now") {
                 //check to see if the user has already played the quiz as the elements will display incorrectly is so
-                if (userName = "")
+                if (hasPlayed)
                 {
                     createUserDetailsPage();
                 }
@@ -170,9 +171,33 @@ document.addEventListener("DOMContentLoaded", function () {
         const form = event.target;
         //get the inputs value with the name "username"
         userName = form.username.value;
-        console.log(userName);
-        createQuestionPage();
-        startQuiz();
+        //if the hasPlayed is true, clear the current score and reset the elements to the default style
+        if (hasPlayed)
+        {
+            let resetOptions = document.getElementsByTagName("p");
+            let resetOptionsArray = Array.from(resetOptions);
+            //remove the first p element which is the intro/instructions paragraph
+            resetOptionsArray.shift();
+            for (let i = 0; i < resetOptionsArray.length; i++)
+            {
+                resetOptionsArray[i].classList.remove("correct-answer");
+                resetOptionsArray[i].classList.remove("incorrect-answer");
+            }
+            //reset the counters
+            questionCounter = 0;
+            currentQuestion = 1;
+            //reset current score
+            currentScore = 0;
+            createQuestionPage();
+            startQuiz();
+        }
+        else
+        {
+            createQuestionPage();
+            startQuiz(); 
+        }
+
+        
     })
 
 })
@@ -327,7 +352,8 @@ function displayQuestion() {
     document.getElementById("option2").textContent = questions[questionCounter].option2;
     document.getElementById("option3").textContent = questions[questionCounter].option3;
     document.getElementById("option4").textContent = questions[questionCounter].option4;
-
+    console.log("beofre event listener added to options");
+    console.log(currentScore);
     //add event listeners to the p elements
     let pOptions = document.getElementsByTagName("p");
     let pOptionsArray = Array.from(pOptions);
@@ -345,7 +371,6 @@ function displayQuestion() {
                     let audioCorrect = document.getElementById("audio-feedback");
                     audioCorrect.setAttribute("src", "../assets/audio/lovely-jubbly.mp3");
                     audioCorrect.play();
-                    console.log(currentQuestion);
                     //check to see if the user has answered all questions and if not, display the next question. If yes, end the game.
                     if (currentQuestion < 2) {
                         setTimeout(displayNextQuestion, 5000);
@@ -425,7 +450,6 @@ function displayNextQuestion() {
  * view
  */
 function finishQuiz() {
-    console.log("Quiz finished");
     //hide current question elements
     document.getElementById("question-header").classList.add("hide");
     document.getElementById("option1").classList.add("hide");
@@ -453,6 +477,9 @@ function finishQuiz() {
         highScores.push(newHighscore);
         //sort the array by score high to low
     }
+    //update the hasPlayed variable to true
+    hasPlayed = true;
+    currentScore = 0;
 }
 function restyleDisplay()
 {
@@ -460,4 +487,5 @@ function restyleDisplay()
     document.getElementById("trophy").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
     document.getElementById("form-lets-go").classList.remove("hide");
+    
 }
