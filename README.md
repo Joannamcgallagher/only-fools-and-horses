@@ -18,9 +18,13 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
 
 ## Features
 
-Site features, technologies used, features left to implement, testing, bugs
+Site features, technologies used, features left to implement, testing, responsive, bugs
 
 ## Validator Testing
+
+* HTML
+* CSS
+* Javascript
 
 ## Deployment
 

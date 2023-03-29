@@ -13,7 +13,7 @@ h1
     font-size: 350%;
     text-shadow: 1px 0.1px 4px gray;
     text-transform: uppercase;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 h1 i
 {
@@ -90,7 +90,7 @@ when hidden */
     background: url("../images/del-rodney-grandad.jpg") no-repeat center center;
     height: 550px;
     width: 60%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     top: 50%;
