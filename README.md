@@ -50,7 +50,6 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
 
 ## Features
 
-technologies used, features left to implement, testing, responsive, bugs
 * Logo
     * This is created with a h1 and a font awesome icon and features throughout the quiz. It is also a link to direct the uer back to the start.
 
@@ -62,7 +61,7 @@ technologies used, features left to implement, testing, responsive, bugs
 ![Screenshot of buttons](docs/buttons.png)
 
 * Images
-    * When the site is loaded, the main image shows the Trotter family which are the main characters in the show. 
+    * When the site is loaded, the main image shows the Trotter family which are the prominent characters in the show. 
     
 ![Screenshot of main image on page loading](docs/main-image.png)
 
@@ -107,6 +106,26 @@ technologies used, features left to implement, testing, responsive, bugs
     * By using the colors detailed above, the site is quite readable and there is high contrast between the foreground and background. The images and colours flow well together and keep in tone with that of the TV show.
     * For testing purposes, I reduced the number of questions displayed to two to prevent having to go through all questions to test various elements.
 
+### Features left to implement
+    * I would like to have three levels of questions in the future; beginner, intermediate and advanced.   
+
+### Responsive
+    * I have run the deployed site on Am I Responsive https://amiresponsive.co.uk/ wchich displays the site on a variety of devices.
+
+![Screenshot of amiresponsive](docs/am-i-responsive.png)
+
+### Bugs
+    * I encountered an issue with ensuring a user entered a name in the form section. I researched and sought the help of tutor support and was able to resolve it then. Initially, I had not got then input field declared in a form and this was part of the bug.
+    * I encountered issues with the repository not loading in the latest code. I spoke to tutor support and they were able to advise both times.
+    * When trying to read in the data from the high scores array and display it in the table, I had to research this many times as it would not read the data. Eventually, after playing around with this, I was able to get this working.
+    * The audio files caused a bug more specifically when I was trying to mute them when the user clicked on the button. Again, I was able to resolve this by researching on the web.
+    * There was a bug when trying to display the correct answer when the user clicked on an incorrect answer. It was to do with the referencing of that item in the array of objects. Again, playing around with this and trying different methods and I was able to resolve this.
+
+### Unfixed bugs
+    * The audio files causing a 404 error when the site is deployed. When I open the site in the browser from the repo, it works as it should but when I use the Google Dev tools on the live site, the audio folder does not carry over therefore, the files are unable to play.
+    * When the user has played through the quiz and goes to play again, the current score remains at their last score despite me resetting this to 0 in the finish quiz function. I have worked on this and tried various methods but to no avail. 
+    * On smaller devices, the applied styles for incorrect answer and correct answer do not apply. On larger size sreens, this works fine. I researched this but ultimately ran out of time to resolve this. 
+
 ## Validator Testing
 
 * HTML
@@ -124,8 +143,33 @@ technologies used, features left to implement, testing, responsive, bugs
 
     ![Screenshot of Javascript validator](docs/jshint.png)
 
+* Lighthouse
+    I ran a report on this in Lighthouse which is part of the Google Dev tools.
+
+    ![Screenshot of Lighthouse report](docs/Lighthouse-report.png)
+
 ## Deployment
+    * The site is deployed to Github pages following the below steps:
+        * In Github for the selected repository, click on settings.
+        * Click on the Pages option
+        * In the sources selection menu, click on main branch in the dropdown.
+        * Click Save
+    
+    * The repository link can be found [here](https://github.com/Joannamcgallagher/only-fools-and-horses)
+    * The live link can be found here - 
 
 ## Content
+    * Favicon image : https://nationalmotormuseum.org.uk/wp-content/uploads/2017/11/Reliant-Van-Trotters-1972.jpg
+    * Main image, Trotter family : https://www.dailyrecord.co.uk/entertainment/celebrity/only-fools-horses-episode-banned-27545705
+    * Secondary image : https://fanart.tv/series/75628/only-fools-and-horses/
+    * Icons were park of the font awesome kit
+    * Audio files : Recorded from the show
 
 ## Credits
+    * Love Maths walkthrough project 
+    * https://www.w3schools.com/tags/att_audio_controls.asp for help with creating table elements in the index.html
+    * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label for adding an aria-label to make the button for mute accessible for those with screen readers
+    * https://www.w3schools.com/css/css_table_style.asp for help styling the rows in the table so that every even row were styled with a differenct background color
+    * https://www.w3schools.com/jsref/prop_style_cursor.asp for changing the style of the cursor so it becomes a pointer on hover over the options for the questions
+    * https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz for adding data to the table from the DOM on a click event
+    * https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/ to enable the focus in teh input field when the form loads

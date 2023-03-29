@@ -387,12 +387,21 @@ or highlight the correct one if the user has selected the incorrect answer */
         width: 70%;
         font-size: 120%;
     }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px)
-{
     #question-container
     {
         height: 150px;;
+    }
+}
+/* Extra large screen sizes 1350px and up*/
+@media only screen and (min-width: 1350px)
+{
+    #game-area-background 
+    {
+        height: 350px;
+    }
+    #question-header
+    {
+        font-size: 120%;
+        margin : 5px 0 15px 0;
     }
 }
