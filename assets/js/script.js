@@ -243,7 +243,6 @@ function displayHighScores() {
         //use the high scores declared and add the names and scores to the table element
         // https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz
         let table = document.getElementById("high-scores-table");
-        console.log(highScores);
         for (let i = 0; i < highScores.length; i++) {
             let newRow = table.insertRow(-1);
             let newCell1 = newRow.insertCell(0);
@@ -262,7 +261,6 @@ function displayHighScores() {
         document.getElementById("high-scores-table").classList.remove("hide");
         document.getElementById("game-area-background").style.height = "550px";
         let table = document.getElementById("high-scores-table");
-        console.log(highScores);
         for (let i = 0; i < highScores.length; i++) {
             let newRow = table.insertRow(-1);
             let newCell1 = newRow.insertCell(0);
@@ -340,8 +338,6 @@ function displayQuestion() {
     document.getElementById("option2").textContent = questions[questionCounter].option2;
     document.getElementById("option3").textContent = questions[questionCounter].option3;
     document.getElementById("option4").textContent = questions[questionCounter].option4;
-    console.log("beofre event listener added to options");
-    console.log(currentScore);
     //add event listeners to the p elements
     let pOptions = document.getElementsByTagName("p");
     let pOptionsArray = Array.from(pOptions);
@@ -368,7 +364,6 @@ function displayQuestion() {
                     }
                 } else {
                     document.getElementById(sumbittedAnswer).classList.add("incorrect-answer");
-                    console.log(currentQuestion);
                     let audioIncorrect = document.getElementById("audio-feedback");
                     audioIncorrect.setAttribute("src", "../assets/audio/plonker.mp3");
                     audioIncorrect.play();
