@@ -16,9 +16,8 @@
 <body>
     <!-- H1 to show title and link back to index.html -->
     <a href="index.html">
-        <h1 id="logo"></i>Only Fools and Horses quiz<i class="fa-solid fa-bolt-lightning"></i></h1>
+        <h1 id="logo">Only Fools and Horses quiz<i class="fa-solid fa-bolt-lightning"></i></h1>
     </a>
-    </div>
     <div id="outer-image">
         <!-- Div for main image and for trophy icon when the highscores button is clicked -->
         <div id="game-area-background" class="main-image">
@@ -52,9 +51,8 @@
             </p>
             <!-- Form to show when the user clicks to start the quiz and display the elements so they can input their name -->
             <form id="form-lets-go">
-                <label id="user-label" for="user-name" class="hide">Enter your name here : </label>
-                <!--  -->
-                <input required type="text" name="username" id="user-input" class="hide" required><br>
+                <label id="user-label" for="user-input" class="hide">Enter your name here : </label>
+                <input required type="text" name="username" id="user-input" class="hide"><br>
                 <input type="submit" id="btn-lets-go" data-type="lets-go" class="hide" value="Lets Go!!">
             </form>
             <!-- Elements to be displayed when the user starts the quiz. These are hidden at first and will add the show class when needed -->
@@ -80,7 +78,8 @@
             </div>
             <!-- Mute button which will mute the sound if the user clicks or unmute the sound if the sound is already muted -->
             <!-- Also contains a font awesome icon -->
-            <button id="button-mute" data-type="mute-unmute"><i class="fas fa-music" id="volume"></i></button>
+            <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label -->
+            <button aria-label="Toggle-sound" id="button-mute" data-type="mute-unmute"><i class="fas fa-music" id="volume"></i></button>
         </div>
     </div>
     <!-- Font awesome script -->

@@ -2,7 +2,6 @@
 let userName = "";
 let questionCounter = 0; //Counter for referecing the questions in the object array
 let currentQuestion = 1; //Counter to display the number of the current question
-let nextQ = [];
 let sumbittedAnswer;
 let currentScore = 0;
 let audioOn = true;
@@ -87,7 +86,7 @@ const questions = [{
         option4: "Ford Escort",
         correctAnswer: "option2"
     }
-]
+];
 let highScores = [{
         name: "Simon",
         score: 9
@@ -128,7 +127,7 @@ let highScores = [{
         name: "Bob",
         score: 2
     }
-]
+];
 //Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else
                 {
-                    restyleDisplay()
+                    restyleDisplay();
                     createUserDetailsPage();
                 }
             }
@@ -158,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("only-fools").style.display = "none";
                 displayHighScores();
             }
-        })
+        });
     }
     //Tutor support (Sean) provided the below to fix the form validation to ensure the user enters a username
     //select the form
@@ -198,9 +197,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-    })
+    });
 
-})
+});
 /**
  * Function to toggle the sound depending on whether the user has clicked on the button displayed.
  * This also updates the icon from font awesome
@@ -283,7 +282,7 @@ function createUserDetailsPage() {
     document.getElementById("intro-paragraph").classList.add("hide");
     //change the main image and make set the height smaller
     document.getElementById("game-area-background").style.background = "url('assets/images/banner.png') no-repeat center center";
-    document.getElementById("game-area-background").style.height = "275px"
+    document.getElementById("game-area-background").style.height = "275px";
     //remove the buttons from the display
     let buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {
@@ -301,18 +300,7 @@ function createUserDetailsPage() {
     document.getElementById("user-input").focus();
     document.getElementById("btn-lets-go").classList.add("button-additional");
 }
-/**
- * Function to retrieve the username the suer has entered and to store it in the global variable above so it can be accessed later on
- */
-function submitUserName() {
-    let submittedtUserName = document.getElementById("user-input").value;
-    // https://www.tutorialspoint.com/check-if-value-is-empty-in-javascript#:~:text=Use%20the%20condition%20with%20%E2%80%9C%E2%80%9D%20and,fill%20the%20text%20box%20value.
-    if (submittedtUserName === "") {
-        alert("Please enter a username. This should not be blank.")
-    } else {
-        return submittedtUserName;
-    }
-}
+
 /**
  * Function to style the quiz including containers, headers, options and buttons etc. Mutliple elements have classes that are added or removed
  */
@@ -346,7 +334,7 @@ function startQuiz() {
  * of 5 seconds has passed. The answer-feedback element is also cleared on completion of the function so it does not show when the next question is loadedd.
  */
 function displayQuestion() {
-    document.getElementById("question-container").style.height = "350px"
+    document.getElementById("question-container").style.height = "350px";
     document.getElementById("question-header").textContent = `Q${questionCounter + 1} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
     document.getElementById("option2").textContent = questions[questionCounter].option2;
