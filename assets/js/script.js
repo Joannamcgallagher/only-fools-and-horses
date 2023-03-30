@@ -6,6 +6,7 @@ let sumbittedAnswer;
 let currentScore = 0;
 let audioOn = true;
 let hasPlayed = false; //update this when the user has played so the elements can be reset should they play again
+
 const questions = [{
         question: "What is the name of the local pub frequented by the Trotters? ",
         option1: "The Queen Vic",
@@ -87,6 +88,7 @@ const questions = [{
         correctAnswer: "option2"
     }
 ];
+
 let highScores = [{
         name: "Simon",
         score: 9
