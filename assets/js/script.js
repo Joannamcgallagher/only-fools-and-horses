@@ -353,7 +353,7 @@ function displayQuestion() {
                     document.getElementById(sumbittedAnswer).classList.add("correct-answer");
                     incrementScore();
                     let audioCorrect = document.getElementById("audio-feedback");
-                    audioCorrect.setAttribute("src", "../assets/audio/lovely-jubbly.mp3");
+                    audioCorrect.setAttribute("src", "assets/audio/lovely-jubbly.mp3");
                     audioCorrect.play();
                     //check to see if the user has answered all questions and if not, display the next question. If yes, end the game.
                     if (currentQuestion < 2) {
@@ -365,7 +365,7 @@ function displayQuestion() {
                 } else {
                     document.getElementById(sumbittedAnswer).classList.add("incorrect-answer");
                     let audioIncorrect = document.getElementById("audio-feedback");
-                    audioIncorrect.setAttribute("src", "../assets/audio/plonker.mp3");
+                    audioIncorrect.setAttribute("src", "assets/audio/plonker.mp3");
                     audioIncorrect.play();
                     if (currentQuestion < 2) {
                         setTimeout(displayNextQuestion, 5000);
