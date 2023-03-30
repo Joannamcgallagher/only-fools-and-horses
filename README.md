@@ -63,16 +63,16 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
 * Images
     * When the site is loaded, the main image shows the Trotter family which are the prominent characters in the show. 
     
-![Screenshot of main image on page loading](docs/main-image.png)
+    ![Screenshot of main image on page loading](docs/main-image.png)
 
     * When the user clicks on the button to play now, the image updates and is scaled down to allow for more room for the form and questions.
 
-![Screenshot of secondary image](docs/secondary-image.png)
+    ![Screenshot of secondary image](docs/secondary-image.png)
 
 * Form
     * There is a form to allow the user to enter in their username so they can be entered into the high scores table providing they score above 0. The username is required for the input field so the user cannot start the quiz without entering a name in.
 
-![Screenshot of form](docs/form.png)
+    ![Screenshot of form](docs/form.png)
 
 * Question and answers page
     * When the suer gets this far, they are presented with the question which is a h3 and four p elements for the user to select their answer. These have the same styles applied as that of the buttons and when the DOM detects a click event, another style is added and element will be green for a correct answer or red for an incorrect answer. They also have a border radius and box shadown and the box shadow updates the color based on the answer selected. The current score will also update if the user has selected the correct answer and if not, the correct answer will be displayed.

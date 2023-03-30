@@ -463,7 +463,11 @@ function finishQuiz() {
     //update the hasPlayed variable to true
     hasPlayed = true;
     currentScore = 0;
-}
+}  
+
+/**
+ * Function to restyle the display when the user has played through and then clicked on high scores as the eleents were all still visisble.
+ */
 function restyleDisplay()
 {
     document.getElementById("high-scores-table").classList.add("hide");
