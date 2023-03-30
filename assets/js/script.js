@@ -232,6 +232,8 @@ function displayInstructions() {
  * will slightly differ so it needs to be udpated for the table to display correctly.
  */
 function displayHighScores() {
+    //disable the high-scores button to prevent the user clickking multiple times
+    document.getElementById("high-scores").disabled = true;
     //check to see if the user has already completed the quiz as the page style will be different if so
     if (userName === "") {
         document.getElementById("game-area-background").classList.add("high-scores-display");
@@ -250,6 +252,7 @@ function displayHighScores() {
             newCell1.textContent = highScores[i].name;
             newCell2.textContent = highScores[i].score;
         }
+        
     }
     //if the user has already played the game
     else {
@@ -463,6 +466,8 @@ function finishQuiz() {
     //update the hasPlayed variable to true
     hasPlayed = true;
     currentScore = 0;
+    //enable the high-scores button
+    document.getElementById("high-scores").disabled = false;
 }  
 
 /**
