@@ -115,17 +115,17 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
 ![Screenshot of amiresponsive](docs/am-i-responsive.png)
 
 ### Bugs
-    * I encountered an issue with ensuring a user entered a name in the form section. I researched and sought the help of tutor support and was able to resolve it then. Initially, I had not got then input field declared in a form and this was part of the bug.
-    * I encountered issues with the repository not loading in the latest code. I spoke to tutor support and they were able to advise both times.
-    * When trying to read in the data from the high scores array and display it in the table, I had to research this many times as it would not read the data. Eventually, after playing around with this, I was able to get this working.
-    * The audio files caused a bug more specifically when I was trying to mute them when the user clicked on the button. Again, I was able to resolve this by researching on the web.
-    * The audio files were not playing when the site was deployed however this was due to a file path error which was resolved.
-    * There was a bug when trying to display the correct answer when the user clicked on an incorrect answer. It was to do with the referencing of that item in the array of objects. Again, playing around with this and trying different methods and I was able to resolve this.
-    * When the user clicked on an answer, the site still allowed thejm to click again within the same question. This caused the score to update multiple times assuming they clicked on the correct one. I was able to fix this by setting the pointer events to none.
+    + I encountered an issue with ensuring a user entered a name in the form section. I researched and sought the help of tutor support and was able to resolve it then. Initially, I had not got then input field declared in a form and this was part of the bug.
+    + I encountered issues with the repository not loading in the latest code. I spoke to tutor support and they were able to advise both times.
+    + When trying to read in the data from the high scores array and display it in the table, I had to research this many times as it would not read the data. Eventually, after playing around with this, I was able to get this working.
+    + The audio files caused a bug more specifically when I was trying to mute them when the user clicked on the button. Again, I was able to resolve this by researching on the web.
+    + The audio files were not playing when the site was deployed however this was due to a file path error which was resolved.
+    + There was a bug when trying to display the correct answer when the user clicked on an incorrect answer. It was to do with the referencing of that item in the array of objects. Again, playing around with this and trying different methods and I was able to resolve this.
+    + When the user clicked on an answer, the site still allowed thejm to click again within the same question. This caused the score to update multiple times assuming they clicked on the correct one. I was able to fix this by setting the pointer events to none.
 
 ### Unfixed bugs
-    * When the user has played through the quiz and goes to play again, the current score remains at their last score despite me resetting this to 0 in the finish quiz function. I have worked on this and tried various methods but to no avail. 
-    * On smaller devices, the applied styles for incorrect answer and correct answer do not apply. On larger size sreens, this works fine.
+    + When the user has played through the quiz and goes to play again, the current score remains at their last score despite me resetting this to 0 in the finish quiz function. I have worked on this and tried various methods but to no avail. 
+    + On smaller devices, the applied styles for incorrect answer and correct answer do not apply. On larger size sreens, this works fine.
 
 ## Validator Testing
 
@@ -150,28 +150,28 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
     ![Screenshot of Lighthouse report](docs/Lighthouse-report.png)
 
 ## Deployment
-    * The site is deployed to Github pages following the below steps:
+    + The site is deployed to Github pages following the below steps:
         * In Github for the selected repository, click on settings.
         * Click on the Pages option
         * In the sources selection menu, click on main branch in the dropdown.
         * Click Save
     
-    * The repository link can be found [here](https://github.com/Joannamcgallagher/only-fools-and-horses)
-    * The live link can be found here - 
+    + The repository link can be found [here](https://github.com/Joannamcgallagher/only-fools-and-horses)
+    + The live link can be found here - 
 
 ## Content
-    * Favicon image : https://nationalmotormuseum.org.uk/wp-content/uploads/2017/11/Reliant-Van-Trotters-1972.jpg
-    * Main image, Trotter family : https://www.dailyrecord.co.uk/entertainment/celebrity/only-fools-horses-episode-banned-27545705
-    * Secondary image : https://fanart.tv/series/75628/only-fools-and-horses/
-    * Icons were park of the font awesome kit
-    * Audio files : Recorded from the show
+    + Favicon image : https://nationalmotormuseum.org.uk/wp-content/uploads/2017/11/Reliant-Van-Trotters-1972.jpg
+    + Main image, Trotter family : https://www.dailyrecord.co.uk/entertainment/celebrity/only-fools-horses-episode-banned-27545705
+    + Secondary image : https://fanart.tv/series/75628/only-fools-and-horses/
+    + Icons were park of the font awesome kit
+    + Audio files : Recorded from the show
 
 ## Credits
-    * Love Maths walkthrough project 
-    * https://www.w3schools.com/tags/att_audio_controls.asp for help with creating table elements in the index.html
-    * https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label for adding an aria-label to make the button for mute accessible for those with screen readers
-    * https://www.w3schools.com/css/css_table_style.asp for help styling the rows in the table so that every even row were styled with a differenct background color
-    * https://www.w3schools.com/jsref/prop_style_cursor.asp for changing the style of the cursor so it becomes a pointer on hover over the options for the questions
-    * https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz for adding data to the table from the DOM on a click event
-    * https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/ to enable the focus in teh input field when the form loads
-    * https://stackoverflow.com/questions/53912271/disabling-a-paragraph-element for changing the pointer events to diable the user clicking when already answered
+    + Love Maths walkthrough project 
+    + https://www.w3schools.com/tags/att_audio_controls.asp for help with creating table elements in the index.html
+    + https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label for adding an aria-label to make the button for mute accessible for those with screen readers
+    + https://www.w3schools.com/css/css_table_style.asp for help styling the rows in the table so that every even row were styled with a differenct background color
+    + https://www.w3schools.com/jsref/prop_style_cursor.asp for changing the style of the cursor so it becomes a pointer on hover over the options for the questions
+    + https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz for adding data to the table from the DOM on a click event
+    + https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/ to enable the focus in teh input field when the form loads
+    + https://stackoverflow.com/questions/53912271/disabling-a-paragraph-element for changing the pointer events to diable the user clicking when already answered
