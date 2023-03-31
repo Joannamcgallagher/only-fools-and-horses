@@ -119,12 +119,13 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
     * I encountered issues with the repository not loading in the latest code. I spoke to tutor support and they were able to advise both times.
     * When trying to read in the data from the high scores array and display it in the table, I had to research this many times as it would not read the data. Eventually, after playing around with this, I was able to get this working.
     * The audio files caused a bug more specifically when I was trying to mute them when the user clicked on the button. Again, I was able to resolve this by researching on the web.
+    * The audio files were not playing when the site was deployed however this was due to a file path error which was resolved.
     * There was a bug when trying to display the correct answer when the user clicked on an incorrect answer. It was to do with the referencing of that item in the array of objects. Again, playing around with this and trying different methods and I was able to resolve this.
+    * When the user clicked on an answer, the site still allowed thejm to click again within the same question. This caused the score to update multiple times assuming they clicked on the correct one. I was able to fix this by setting the pointer events to none.
 
 ### Unfixed bugs
-    * The audio files causing a 404 error when the site is deployed. When I open the site in the browser from the repo, it works as it should but when I use the Google Dev tools on the live site, the audio folder does not carry over therefore, the files are unable to play.
     * When the user has played through the quiz and goes to play again, the current score remains at their last score despite me resetting this to 0 in the finish quiz function. I have worked on this and tried various methods but to no avail. 
-    * On smaller devices, the applied styles for incorrect answer and correct answer do not apply. On larger size sreens, this works fine. I researched this but ultimately ran out of time to resolve this. 
+    * On smaller devices, the applied styles for incorrect answer and correct answer do not apply. On larger size sreens, this works fine.
 
 ## Validator Testing
 

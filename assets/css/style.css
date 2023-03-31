@@ -4,10 +4,14 @@
     padding: 0;
     border: none;
 }
+
+/* Set the font family for the entire quiz */
 body
 {
     font-family:  Calibri, sans-serif;
 }
+
+/* Target the h1 */
 h1
 {
     font-size: 350%;
@@ -15,26 +19,34 @@ h1
     text-transform: uppercase;
     margin-top: 15px;
 }
+
+/* target the i class in the h1 */
 h1 i
 {
     margin-left: 20px;
     color: goldenrod;
 }
+
+/* set the style for the a tag */
 a
 {
     text-decoration: none;
     color: black;
 }
+
+/* Target the h3 elements */
 h3
 {
     margin: 5px 0px 25px 0px;
     font-size: 150%
 }
+
 /* Hide the audio controls */
 audio
 {
     display: none;
 }
+
 /* Style table containing high scores */
 table
 {
@@ -46,23 +58,27 @@ table
     margin: 0 auto 0 auto;
     padding: 5px;
 }
+
 /* table elements */
 td
 {
     width: 45%;
     text-align: center;
 }
+
 th
 {
     text-decoration: underline;
     font-size: larger;
 }
+
 /* https://www.w3schools.com/css/css_table_style.asp */
 /* Style the rows in the table to that evevry second row is shown is a different color */
 tr:nth-child(even) 
 {
     background-color: #f2f2f2;
 }
+
 /* Main logo with an font awesome icon */
 #logo
 {
@@ -72,11 +88,13 @@ tr:nth-child(even)
     margin-right: auto;
 
 }
+
 /*Show class to call when the elements are to be displayed */
 .show 
 {
     visibility: visible;
 }
+
 /* Hide class to call when the elements are to be hidden with display none being declared so the elements do not take up any space on the page
 when hidden */
 .hide
@@ -84,6 +102,7 @@ when hidden */
     visibility: hidden;
     display: none;
 }
+
 /* Style the index.html image so it sits in the center of the page */
 .main-image
 {
@@ -100,6 +119,7 @@ when hidden */
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
 /* Icon on the high scores table style */
 #trophy
 {
@@ -108,16 +128,19 @@ when hidden */
     color: goldenrod;
     font-size: 500%;
 }
+
 #high-scores-table
 {
     width: 90%;
     text-align: center;
 }
+
 /* Class to be called when the user clicks on the highscores button to use the game-area-background div to display the high scores */
 .high-scores-display
 {
     background: none;
 }
+
 /* Style the div where the majority of the elements are */
 #game-controls
 {
@@ -126,17 +149,20 @@ when hidden */
     margin-left: auto;
     margin-right: auto;
 }
+
 #intro-paragraph
 {
     text-align: center;
     margin-top: 2%;
     font-size: 20px;
 }
+
 /* Div containing the buttons to navigate through the site */
 #button-outer
 {
     text-align: center;
 }
+
 /* Button styles to keep in line with the color scheme */
 #play-now
 {
@@ -150,6 +176,7 @@ when hidden */
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
 #button-mute
 {
     background-color: goldenrod;
@@ -162,10 +189,12 @@ when hidden */
     height: 35px;
     font-size: larger;
 }
+
 #question-container
 {
     height: 130px;
 }
+
 /* Invert colors when button is hovered over */
 #play-now:hover, #instructions:hover, #high-scores:hover, #button-mute:hover
 {
@@ -173,6 +202,7 @@ when hidden */
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
+
 /* target all the buttons in the div button-inner */
 #button-inner button
 {
@@ -187,6 +217,7 @@ when hidden */
     border-radius: 20px;
     box-shadow: 10px 10px 20px darkgray;
 }
+
 /* Create a class to be called to style the question-container when the play-now button is clicked */
 .update-question-div
 {
@@ -197,6 +228,7 @@ when hidden */
     margin-top: 30px;
     text-align: center;
 }
+
 /* Create styles for the label and input once it's visible */
 .user-label-style
 {
@@ -205,6 +237,7 @@ when hidden */
     height: 30px;
     font-size: 25px;
 }
+
 /* Style the input field where the suer enters their name */
 .user-input
 {
@@ -231,6 +264,7 @@ when hidden */
     box-shadow: 10px 10px 20px darkgray;
     margin-top: 40px;
 }
+
 /* Style the p elements for the questions multiple choices */
 .options
 {
@@ -245,6 +279,7 @@ when hidden */
     background-color: goldenrod;
     color: white;
 }
+
 /* Style the button so the colors invert when hovered over */
 .options:hover
 {
@@ -252,6 +287,7 @@ when hidden */
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
+
 /* Style the button when the user clicks on it */
 .on-click
 {
@@ -267,12 +303,14 @@ when hidden */
     color: goldenrod;
     box-shadow: 10px 10px 20px goldenrod;
 }
+
 /* Display for current score */
 #score
 {
     text-align: center;
     font-size: 150%;
 }
+
 /* Classes to be applied when the user has clicked an option so it will show if the user has selected the correct answer 
 or highlight the correct one if the user has selected the incorrect answer */
 .correct-answer
@@ -289,6 +327,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     box-shadow: 10px 10px 20px darkgreen;
     color: white;;
 }
+
 .incorrect-answer
 {
     display: grid;
@@ -303,6 +342,7 @@ or highlight the correct one if the user has selected the incorrect answer */
     box-shadow: 10px 10px 20px darkred;
     color: white;;
 }
+
 /* Media Queries */
 /* For small screen size from 600px wide and down */
 @media screen and (max-width: 600px)
@@ -352,6 +392,7 @@ or highlight the correct one if the user has selected the incorrect answer */
         width: 60%;
     }
 }
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px)
 {
@@ -374,6 +415,7 @@ or highlight the correct one if the user has selected the incorrect answer */
         font-size: 100%;
     }
 }
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px)
 {
@@ -392,6 +434,7 @@ or highlight the correct one if the user has selected the incorrect answer */
         height: 150px;;
     }
 }
+
 /* Extra large screen sizes 1350px and up*/
 @media only screen and (min-width: 1350px)
 {
