@@ -140,13 +140,11 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "play-now") {
                 //check to see if the user has already played the quiz as the elements will display incorrectly is so
-                if (hasPlayed)
-                {
-                    createUserDetailsPage();
-                }
-                else
-                {
+                if (hasPlayed) {
                     restyleDisplay();
+                    createUserDetailsPage();
+                } else {
+                    
                     createUserDetailsPage();
                 }
             }
@@ -174,14 +172,12 @@ document.addEventListener("DOMContentLoaded", function () {
         //get the inputs value with the name "username"
         userName = form.username.value;
         //if the hasPlayed is true, clear the current score and reset the elements to the default style
-        if (hasPlayed)
-        {
+        if (hasPlayed) {
             let resetOptions = document.getElementsByTagName("p");
             let resetOptionsArray = Array.from(resetOptions);
             //remove the first p element which is the intro/instructions paragraph
             resetOptionsArray.shift();
-            for (let i = 0; i < resetOptionsArray.length; i++)
-            {
+            for (let i = 0; i < resetOptionsArray.length; i++) {
                 resetOptionsArray[i].classList.remove("correct-answer");
                 resetOptionsArray[i].classList.remove("incorrect-answer");
             }
@@ -192,14 +188,12 @@ document.addEventListener("DOMContentLoaded", function () {
             currentScore = 0;
             createQuestionPage();
             startQuiz();
-        }
-        else
-        {
+        } else {
             createQuestionPage();
-            startQuiz(); 
+            startQuiz();
         }
 
-        
+
     });
 
 });
@@ -228,9 +222,12 @@ function toggleMute() {
  * Function to display the instructions for the user. It updates the p element on index.html
  */
 function displayInstructions() {
-    document.getElementById("intro-paragraph").textContent =
-        `There are ten questions to be answered and these will be have 4 possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
+    if (hasPlayed) {
+        document.getElementById("question-container").classList.remove("hide");
+        document.getElementById("intro-paragraph").textContent =
+            `There are ten questions to be answered and these will be have 4 possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
     Read the questions, think carefully and then select an option! The game will let you know if you are right or wrong!`;
+    }
 }
 
 /**
@@ -258,7 +255,7 @@ function displayHighScores() {
             newCell1.textContent = highScores[i].name;
             newCell2.textContent = highScores[i].score;
         }
-        
+
     }
     //if the user has already played the game
     else {
@@ -360,6 +357,7 @@ function displayQuestion() {
         pOption.addEventListener("click", function () {
                 sumbittedAnswer = this.getAttribute("data-type");
                 //disable the options so the user cannot click twice
+                //https://stackoverflow.com/questions/53912271/disabling-a-paragraph-element
                 document.getElementById("option1").style.pointerEvents = "none";
                 document.getElementById("option2").style.pointerEvents = "none";
                 document.getElementById("option3").style.pointerEvents = "none";
@@ -441,9 +439,8 @@ function displayNextQuestion() {
     //reset the pointerevents
     let pOptions = document.getElementsByTagName("p");
     let pArray = Array.from(pOptions);
-    pArray.shift();//remove the intro paragraph
-    for (let option of pArray)
-    {
+    pArray.shift(); //remove the intro paragraph
+    for (let option of pArray) {
         option.style.pointerEvents = "auto";
     }
     document.getElementById("question-header").textContent = `Q${currentQuestion} : ` + questions[questionCounter].question;
@@ -493,16 +490,15 @@ function finishQuiz() {
     currentScore = 0;
     //enable the high-scores button
     document.getElementById("high-scores").disabled = false;
-}  
+}
 
 /**
  * Function to restyle the display when the user has played through and then clicked on high scores as the eleents were all still visisble.
  */
-function restyleDisplay()
-{
+function restyleDisplay() {
     document.getElementById("high-scores-table").classList.add("hide");
     document.getElementById("trophy").classList.add("hide");
     document.getElementById("question-container").classList.remove("hide");
     document.getElementById("form-lets-go").classList.remove("hide");
-    
+
 }

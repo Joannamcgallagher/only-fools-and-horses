@@ -173,3 +173,4 @@ This is an online quiz created to test users knowledge of the TV show Only Fools
     * https://www.w3schools.com/jsref/prop_style_cursor.asp for changing the style of the cursor so it becomes a pointer on hover over the options for the questions
     * https://www.tutorialspoint.com/How-to-add-rows-to-a-table-using-JavaScript-DOMz for adding data to the table from the DOM on a click event
     * https://www.geeksforgeeks.org/how-to-pre-select-an-input-element-when-the-page-loads-in-html5/ to enable the focus in teh input field when the form loads
+    * https://stackoverflow.com/questions/53912271/disabling-a-paragraph-element for changing the pointer events to diable the user clicking when already answered
