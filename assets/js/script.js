@@ -352,6 +352,11 @@ function displayQuestion() {
         pOption.style.cursor = "pointer";
         pOption.addEventListener("click", function () {
                 sumbittedAnswer = this.getAttribute("data-type");
+                //disable the options so the user cannot click twice
+                document.getElementById("option1").style.pointerEvents = "none";
+                document.getElementById("option2").style.pointerEvents = "none";
+                document.getElementById("option3").style.pointerEvents = "none";
+                document.getElementById("option4").style.pointerEvents = "none";
                 //change the color of the p clicked to show that it was selcted
                 let isCorrect = checkAnswer();
                 if (isCorrect) {
@@ -423,6 +428,14 @@ function displayNextQuestion() {
     for (let p of pSelected) {
         p.classList.remove("correct-answer");
         p.classList.remove("incorrect-answer");
+    }
+    //reset the pointerevents
+    let pOptions = document.getElementsByTagName("p");
+    let pArray = Array.from(pOptions);
+    pArray.shift();//remove the intro paragraph
+    for (let option of pArray)
+    {
+        option.style.pointerEvents = "auto";
     }
     document.getElementById("question-header").textContent = `Q${currentQuestion} : ` + questions[questionCounter].question;
     document.getElementById("option1").textContent = questions[questionCounter].option1;
