@@ -130,6 +130,7 @@ let highScores = [{
         score: 2
     }
 ];
+
 //Below function is from the Love Maths Walkthrough project
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
@@ -202,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
 /**
  * Function to toggle the sound depending on whether the user has clicked on the button displayed.
  * This also updates the icon from font awesome
@@ -221,6 +223,7 @@ function toggleMute() {
         audioOn = true;
     }
 }
+
 /**
  * Function to display the instructions for the user. It updates the p element on index.html
  */
@@ -229,6 +232,7 @@ function displayInstructions() {
         `There are ten questions to be answered and these will be have 4 possible answers! Click on Play Now, you will be asked to enter your name and then click on Let's go!
     Read the questions, think carefully and then select an option! The game will let you know if you are right or wrong!`;
 }
+
 /**
  * Function to display the highscores provided in the array of objects. It also determines if the user has already played the game. If so, the layout of the page
  * will slightly differ so it needs to be udpated for the table to display correctly.
@@ -276,6 +280,7 @@ function displayHighScores() {
         }
     }
 }
+
 /**
  * Function called to style the page and show/hide elements which the uer will be shown in order for them to enter their username
  */
@@ -325,12 +330,14 @@ function createQuestionPage() {
     document.getElementById("score").classList.remove("hide");
     document.getElementById("answer-feedback").classList.remove("hide");
 }
+
 /**
  * Function to start the quiz by displaying the question.
  */
 function startQuiz() {
     displayQuestion();
 }
+
 /**
  * Function to style the question part of the quiz. There are event listeners added to the p elements here so when a usesr clicks on an option/answer,
  * the function will apply the relevant audio, call the check the answer function and display the next question when a timeout
@@ -389,8 +396,8 @@ function displayQuestion() {
         );
     }
     document.getElementById("answer-feedback").textContent = "";
-
 }
+
 /**
  * Function to check whether the option that the user selected is correct or incorrect and returns true or false.
  * Function also displays the correct answer if the user has selected an incorrect answer.
@@ -409,6 +416,7 @@ function checkAnswer() {
         return false;
     }
 }
+
 /**
  * Function to increment the score if the user has answered correctly.
  */
@@ -416,6 +424,7 @@ function incrementScore() {
     currentScore++;
     document.getElementById("current-score").textContent = currentScore;
 }
+
 /**
  * Function to display the next question in the array. Before doing that, it will revert the selected options styles to the default style set in style.css
  */
@@ -445,6 +454,7 @@ function displayNextQuestion() {
     //clear the feedback from the previous answer
     document.getElementById("answer-feedback").textContent = "";
 }
+
 /**
  * Function to finish the quiz once the user has answered all 10 questions. Hides the current elements displayed and updates the p element to show the 
  * users name and score. If the user has scored greater than 0, the name and score will be added to the highscores table that the user can click on and 
